@@ -339,13 +339,15 @@ $learn_more_text = mb_str_split($learn_more);
                                     <div class="float-right">NEWS</div>
                                 </div>
                             </div>
-                            <h3 class="poppins @if(mb_strlen($last_post["title"]) > 70) smaller-title @endif">
-                                {!! $last_post["title"] !!}
-                            </h3>
-                            <a href="#" >
+                            <a href="{{route("news_api",["locale"=>$locale])}}" >
+                                <h3 class="poppins @if(mb_strlen($last_post["title"]) > 70) smaller-title @endif">
+                                    {!! $last_post["title"] !!}
+                                </h3>
+                            </a>
+                            <a href="{{route("news_api",["locale"=>$locale])}}" >
                                 <div class="readmore">Read More</div>
                             </a>
-                            <a href="{{route("news",["locale"=>$locale])}}" >
+                            <a href="{{route("news_api",["locale"=>$locale])}}" >
                                 <div class="news-link pink-yellow-linear">
                                     <img src="{{URL::asset('images/more-news.svg')}}">
                                 </div>
