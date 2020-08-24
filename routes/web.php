@@ -36,8 +36,8 @@ Route::get('/join-us',"meleap@index");
 Route::get('/{locale}/about',"meleap@company")->name("about");
 Route::get('/{locale}/contact',"meleap@contact")->name("contact");
 Route::get('/{locale}/product/{slug?}', "meleap@product")->name("product");
-Route::get('/{locale}/news',"meleap@news")->name("news");
-Route::get('/{locale}/news/{slug}',"meleap@news_single")->name("news-single");
+//Route::get('/{locale}/news',"meleap@news")->name("news");
+//Route::get('/{locale}/news/{slug}',"meleap@news_single")->name("news-single");
 
 Route::get('/{locale}/news_api/category/{slug?}',"meleap@news_api_category")->name("news_api_category");
 Route::get('/{locale}/news_api',"meleap@news_api")->name("news_api");

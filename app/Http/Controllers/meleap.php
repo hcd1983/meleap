@@ -11,23 +11,25 @@ class meleap extends Controller
 {
     public $default = [];
     public $products = [];
+    public $currentpage = 1;
+    public $totalPage = false;
+    public $totalPosts = false;
     public $default_avatar = "https://apimeleap.it-monk.com/wp-content/uploads/2020/08/下載-1.jpg";
     public $IndexPageApi = "https://apimeleap.it-monk.com/wp-json/wp/v2/pages/107";
     public $SettingsApi = "https://apimeleap.it-monk.com/wp-json/wp/v2/pages?slug=settings&per_page=1";
-    public $CategoryApi = "https://apimeleap.it-monk.com/wp-json/wp/v2/categories";
+    public $CategoryApi = "https://apimeleap.it-monk.com/wp-json/wp/v2/categories/?hide_empty=true";
 //    public $CategoryApi = "https://hado-official.com/en/wp-json/wp/v2/categories";
     public $PostApi = "https://apimeleap.it-monk.com/wp-json/wp/v2/posts/";
     public $ProductsApi = "https://apimeleap.it-monk.com/wp-json/wp/v2/product";
-    public $PostApi_En = "";
+
+    public $PostApi_en = "https://hado-official.com/en/wp-json/wp/v2/posts/";
+    public $CategoryApi_en = "https://hado-official.com/en/wp-json/wp/v2/categories/?hide_empty=true";
     public $PageSettingsStatic = false;
-    public $localeRestID = [
-        "jp"=>13,
-        "en"=>14
-    ];
     public $postApiSetting = [
         "per_page" => 9,
-        "order" => 'asc',
-        "orderby"=>'menu_order'
+        "order" => 'desc',
+        "orderby" => "date"
+//        "orderby"=>'menu_order'
     ];
 
     function __construct()
@@ -44,8 +46,17 @@ class meleap extends Controller
         $current_params = \Route::current()->parameters();
         $route_name = \Request::route()->getName();
 
+
+        if(isset($_GET["page"]) && $_GET["page"] && is_numeric($_GET["page"]) ){
+            $this->currentpage = $_GET["page"];
+            $this-> postApiSetting["page"] = $_GET["page"];
+            unset($current_params["page"]);
+        }
+
         $params_with_locale_en = array_merge($current_params,["locale"=>"en"]);
         $params_with_locale_jp = array_merge($current_params,["locale"=>"jp"]);
+
+
 
         if($route_name == null){
 //            $localeLink = [
@@ -53,12 +64,20 @@ class meleap extends Controller
 //                "jp"=> route("home", ["locale"=>"jp"])
 //            ];
             $route_name = "home";
-        }else{
-//            $localeLink = [
-//                "en"=> route( $route_name, ["locale"=>"en"]),
-//                "jp"=> route( $route_name, ["locale"=>"jp"])
-//            ];
         }
+
+        if($route_name == "news_single_api"){
+            $route_name = "news_api";
+            unset($params_with_locale_jp["id"]);
+            unset($params_with_locale_en["id"]);
+        }
+
+        if($route_name == "news_api_category"){
+            $route_name = "news_api";
+            unset($params_with_locale_jp["slug"]);
+            unset($params_with_locale_en["slug"]);
+        }
+
 
         $localeLink = [
             "en"=> route( $route_name,$params_with_locale_en),
@@ -73,10 +92,10 @@ class meleap extends Controller
 
 
 
-
         $this->products = $this->ProductsGetter();
-
         $PageSettingsStatic = $this->PageSettings();
+
+
 
         view()->share('localeLink', $localeLink);
         view()->share('locale', $locale);
@@ -127,17 +146,7 @@ class meleap extends Controller
         return "recache";
     }
 
-    function GetLocaleId($locale="jp"){
 
-        if(!isset($this -> localeRestID[$locale])){
-            $localeId = $this -> localeRestID["jp"];
-        }else{
-            $localeId = $this -> localeRestID[$locale];
-        }
-
-        return $localeId;
-
-    }
 
     function GetProducts(){
 
@@ -211,7 +220,14 @@ class meleap extends Controller
 
     function GetCategory(){
 
-        $endpoint = $this -> CategoryApi;
+        $locale = \App::getLocale();
+
+        if($locale == "en"){
+            $endpoint = $this -> CategoryApi_en;
+        }else{
+            $endpoint = $this -> CategoryApi;
+        }
+
         $client = new \GuzzleHttp\Client();
         $response = $client->request('GET', $endpoint, [
             'verify'=>false
@@ -225,12 +241,29 @@ class meleap extends Controller
 
     function GetPosts($query=[]){
 
+        $locale = \App::getLocale();
+
+        if($locale == "en"){
+            $url = $this -> PostApi_en;
+        }else{
+            $url = $this -> PostApi;
+        }
+
         $_query = array_merge($this->postApiSetting,$query);
-        $url = $this -> PostApi;
+//        $url = $this -> PostApi;
         $client = new \GuzzleHttp\Client();
-        $res = $client->request('GET', $url, ['verify' => false,'query'=>$_query]);
-        $body = $res->getBody();
-        $_body = json_decode($body,true);
+        try {
+            $res = $client->request('GET', $url, ['verify' => false,'query'=>$_query]);
+            $body = $res->getBody();
+            $_body = json_decode($body,true);
+//            dd($res->getHeaders());
+            $this->totalPosts = $res->getHeader('X-WP-Total')[0];
+            $this->totalPage = $res->getHeader('X-WP-TotalPages')[0];
+        }catch(\GuzzleHttp\Exception\ClientException $e){
+            $_body = false;
+        }
+
+
 
         return $_body;
     }
@@ -374,7 +407,7 @@ class meleap extends Controller
 
     function company(){
 
-        $_data = $this -> PageSettings();
+        $_data = $this -> PageSettingsStatic;
         $map = $_data["acf"]["google_map"];
 
 
@@ -492,19 +525,18 @@ class meleap extends Controller
     function news_api($locale){
 
         $categories = $this->GetCategory();
+        $posts = $this-> GetPosts();
 
-        $localeId = $this->GetLocaleId($locale);
+        if(!$posts){
+            abort(404);
+        }
 
-
-        $posts = $this-> GetPosts($query=[
-           "per_page"=> $this -> postApiSetting["per_page"],
-//           "locale" => $localeId
-        ]);
-//        dd($res->getHeader('X-WP-Total'));
-//        dd($_body);
         return view("news_api",[
             "posts"=>$posts,
-            "categories"=>$categories
+            "categories"=>$categories,
+            "current_page" => $this->currentpage,
+            "total_page" => $this->totalPage,
+            "total_posts" => $this->totalPosts,
         ]);
 
 
@@ -521,7 +553,7 @@ class meleap extends Controller
         if($slug == null){
             abort('404');
         }
-        $localeId = $this->GetLocaleId($locale);
+
         $categories = $this->GetCategory();
         $current_category = null;
         foreach ($categories as $key => $category){
@@ -544,20 +576,48 @@ class meleap extends Controller
 //
             return view("news_api",[
                 "posts"=>$posts,
-                "categories"=>$categories
+                "categories"=>$categories,
+                "current_page" => $this->currentpage,
+                "total_page" => $this->totalPage,
+                "total_posts" => $this->totalPosts,
             ]);
         }
 
     }
 
+    function GetPostbyID($id){
+        $locale = \App::getLocale();
+
+        if($locale == "en"){
+            $api_url = $this -> PostApi_en;
+        }else{
+            $api_url = $this -> PostApi;
+        }
+        $url = $api_url.$id;
+        $client = new \GuzzleHttp\Client();
+        try {
+            $res = $client->request('GET', $url, ['verify' => false]);
+            $body = $res->getBody();
+            $post = json_decode($body,true);
+        }catch(\GuzzleHttp\Exception\ClientException $e){
+            $post = false;
+//            echo 'Caught response: ' . $e->getResponse()->getStatusCode();
+        }
+
+
+        return $post;
+    }
+
     function news_single_api($locale,$id){
 
-        $url = "https://apimeleap.it-monk.com/wp-json/wp/v2/posts/".$id;
-        $client = new \GuzzleHttp\Client();
-        $res = $client->request('GET', $url, ['verify' => false]);
-        $body = $res->getBody();
-        $post = json_decode($body,true);
-//        dd($post);
+
+        $post = $this -> GetPostbyID($id);
+
+        if(!$post){
+            abort(404);
+        }
+
+
         return view("news_api_single",["post"=>$post]);
 
         echo $res->getStatusCode();

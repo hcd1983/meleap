@@ -396,7 +396,7 @@ $learn_more_text = mb_str_split($learn_more);
                 </div>
             </div>
 
-            <a href="{{route("news",["locale"=>$locale])}}" >
+            <a href="{{route("news_api",["locale"=>$locale])}}" >
                 <div class="d-lg-none">
                     <img src="{{URL::asset('images/more-news.jpg')}}" class="w-100">
                 </div>

@@ -3,7 +3,7 @@
     'current'=> 'news_api'
 ])
 @php
-
+    $locale = \App::getLocale();
     $single = $post;
     $thumbnail = "";
     $size = "large";

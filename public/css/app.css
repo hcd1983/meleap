@@ -20306,6 +20306,8 @@ canvas.dots {
 .news-single-section article p img {
   display: block;
   margin-bottom: 20px;
+  max-width: 100%;
+  height: auto;
 }
 
 .news-single-section article header {
@@ -21715,16 +21717,6 @@ source {
     background-size: contain;
     position: relative;
     top: 15px;
-  }
-}
-
-@media (max-width: 575px) {
-  .news-single article img {
-    width: 100vw;
-    max-width: -webkit-fit-content;
-    max-width: -moz-fit-content;
-    max-width: fit-content;
-    margin-left: -30px;
   }
 }
 
