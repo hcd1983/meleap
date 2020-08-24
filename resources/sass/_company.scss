@@ -66,9 +66,9 @@
         padding:50px 40px;
 
         @include media-breakpoint-up(lg){
-            position: absolute;
-            top:-50px;
-            left:-100px;
+            //position: absolute;
+            //top:-50px;
+            //left:-100px;
             padding-right:110px;
             padding-bottom:75px;
         }
