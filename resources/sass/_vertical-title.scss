@@ -1,0 +1,17 @@
+.vertical-title{
+    writing-mode: vertical-rl;
+    font-size: 35px;
+    letter-spacing: 1px;
+    span{
+        transform: rotate(270deg);
+        display: inline-block;
+        margin: 5px;
+    }
+    &.nowrap{
+        white-space: nowrap;
+    }
+    &.left-border{
+        padding-left: 10px;
+        border-left:3px solid #FFF;
+    }
+}

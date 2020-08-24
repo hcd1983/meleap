@@ -1,0 +1,38 @@
+@keyframes Pinklinear
+{
+    0% {
+
+        background-position: 0% 50%;
+    }
+    50% {
+
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+@keyframes slide-show {
+    from {
+        right: 50%
+    }
+    to{
+        right: -100%
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}

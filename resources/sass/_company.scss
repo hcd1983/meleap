@@ -1,0 +1,227 @@
+#value{
+    overflow: visible;
+    z-index: 9;
+    .vertical-title{
+        //position: absolute;
+        //right:60px;
+        //margin: 0;
+        position: relative;
+        margin-left: auto;
+        @include media-breakpoint-up(sm){
+
+            margin-right: 80px;
+            top:110px;
+        }
+
+        @include media-breakpoint-up(sm){
+
+            margin-right: 100px;
+            top:110px;
+        }
+
+        @include media-breakpoint-up(xl){
+
+            top:-80px;
+            margin-right: 30px;
+        }
+    }
+    .value-list{
+        padding:80px 0 50px;
+        max-width: 1600px;
+        width: 100%;
+        margin: 0;
+        .value-block{
+            margin-bottom: 50px;
+            @include media-breakpoint-up(lg){
+                margin-bottom: 0;
+                max-width: 280px;
+            }
+
+            .number{
+                font-size: 38px;
+                letter-spacing: 2px;
+                padding-bottom: 10px;
+                margin-bottom: 10px;
+                border-bottom: 2px solid #FFF;
+            }
+
+            h3{
+                &.title{
+                    font-size: 35px;
+                }
+            }
+            p{
+                margin-top:40px;
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+#map{
+    background-color: #1b1e2d;
+    padding:190px 0 110px 0;
+    .company-data{
+        background: $map-linear;
+        padding:50px 40px;
+
+        @include media-breakpoint-up(lg){
+            position: absolute;
+            top:-50px;
+            left:-100px;
+            padding-right:110px;
+            padding-bottom:75px;
+        }
+
+        h2{
+            font-size: 35px;
+            border-bottom: 2px solid #FFF;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        table{
+            th,td{
+                vertical-align: baseline;
+                letter-spacing: 2px;
+                font-size: 16px;
+            }
+            tr{
+                height: 28px;
+            }
+            th{
+                width: 100px;
+
+            }
+        }
+    }
+}
+
+#team_members{
+    background-color: #1b1e2d;
+    .sticky{
+        right: 0;
+        position: sticky;
+    }
+    .section_title_svg{
+        margin-bottom: 90px;
+    }
+    .vertical-title{
+        //margin-right: 30px;
+        margin-right: 0;
+        position: relative;
+        right: 30px;
+        margin-left:auto;
+    }
+    .member-list{
+        h2{
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+            margin-top:60px;
+
+            &:before{
+                content:"";
+                position:absolute;
+                width: 100%;
+                height: 7px;
+                left: 0;
+                bottom: -13px;
+            }
+
+
+            &.management:before{
+                background: $team-linear-management;
+            }
+
+            &.engineer:before{
+                background: $team-linear-engineer;
+            }
+
+            &.sales:before{
+                background: $team-linear-sales;
+            }
+
+            &.event:before{
+                background: $team-linear-event;
+            }
+
+            &.corporate:before{
+                background: $team-linear-corporate;
+            }
+
+
+
+        }
+        .member{
+            width: 90%;
+            max-width: 278px;
+            margin-left: auto;
+            margin-right: auto;
+
+            @include media-breakpoint-up(lg){
+                margin-left: 0;
+            }
+
+
+            .photo{
+
+                padding-top: 100%;
+                max-height: 278px;
+                background-size: cover;
+                background-position: center;
+            }
+            &.management{
+                .data{
+                    background: $team-linear-management;
+                }
+            }
+            &.engineer{
+                .data{
+                    background: $team-linear-engineer;
+                }
+            }
+
+            &.sales{
+                .data{
+                    background: $team-linear-sales;
+                }
+            }
+
+            &.event{
+                .data{
+                    background: $team-linear-event;
+                }
+            }
+
+            &.corporate{
+                .data{
+                    background: $team-linear-corporate;
+                }
+            }
+            .data{
+
+                padding:5px 10px;
+
+                .title:before{
+                    content: "";
+                    display: block;
+                    width: 28px;
+                    border-top: 1px solid;
+                    margin: 8px 0;
+                }
+                h3{
+                    font-size: 30px;
+                    margin-top: -25px;
+                    text-shadow: 0 0 10px #333;
+                }
+                div{
+                    font-size: 13px;
+                    font-weight: 700;
+                }
+            }
+
+        }
+    }
+
+}

@@ -1,0 +1,16 @@
+.youtube-block{
+    padding-top:160px;
+    padding-bottom: 220px;
+    position: relative;
+    .yt-block-content{
+        max-width: 500px;
+        h3{
+            display: inline-block;
+            line-height: 1.5;
+            border-bottom: 2px solid #FFF;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+        }
+    }
+}

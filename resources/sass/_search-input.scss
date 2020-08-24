@@ -1,0 +1,38 @@
+.search-form-container{
+    overflow: hidden;
+    width: 270px;
+    vertical-align: middle;
+    white-space: nowrap;
+    position: relative;
+
+    input[type=text]{
+        font-weight: 600;
+        width: 270px;
+        height: 50px;
+
+        float: left;
+        padding-left: 15px;
+        border-radius: 25px;
+        outline: none;
+        border-style: solid;
+        &::-webkit-input-placeholder{
+            color: #1b1e2d;
+            opacity: .5;
+        }
+    }
+    button.icon{
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        height: 30px;
+        width: 30px;
+        border-radius: 15px;
+        border: none;
+        background: #1b1e2d;
+        color: #FFF;
+        opacity: 1;
+        font-size: 10pt;
+        outline: none;
+    }
+}
+

@@ -1,0 +1,29 @@
+#contact_form{
+    background-color: $dark_main;
+    padding-top: 125px;
+    padding-bottom: 65px;
+    .contact-title{
+        text-align: center;
+        h3{
+            display: inline-block;
+            line-height: 1.5;
+            border-bottom: 2px solid #FFF;
+            padding-bottom: 10px;
+        }
+    }
+    .contact-svg{
+        position: absolute;
+        right: 0;
+        top:30px;
+    }
+
+    @include media-breakpoint-up(xl){
+       .form-content{
+           padding:0 250px;
+           width: 100%;
+           max-width: 1570px;
+           margin:auto;
+       }
+
+    }
+}

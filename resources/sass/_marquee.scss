@@ -1,0 +1,32 @@
+.marquee-container{
+    > div{
+        @extend .in-view-fadein;
+    }
+    height: 77px;
+    background: rgb(89,71,153);
+    background: linear-gradient(90deg, rgba(89,71,153,1) 0%, rgba(64,116,185,1) 72%, rgba(51,153,204,1) 100%);
+    color:#FFF;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    &.purple{
+        background-image: linear-gradient(100deg, #e74385 0%, #f5c53a 100%);
+    }
+    .marquee{
+        width: 100%;
+        overflow: hidden;
+        border-top: 1px solid;
+        border-bottom: 1px solid;
+        padding: 10px;
+    }
+
+    span{
+        margin-left: 10px;
+        font-size: 1.2rem;
+        display: inline-block;
+        vertical-align: middle;
+        letter-spacing: 3px;
+    }
+
+}

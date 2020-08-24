@@ -1,0 +1,22 @@
+.in-view-fadein{
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: .5s;
+    &.in-view-in{
+        opacity: 1;
+    }
+}
+
+.in-view-fadein-to-top{
+    opacity: 0;
+    transform: translateY(30px);
+    transition-property: all;
+    transition-duration: .5s;
+    &.increase{
+        transform: translateY(60px);
+    }
+    &.in-view-in{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}

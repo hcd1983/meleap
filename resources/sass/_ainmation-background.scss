@@ -1,0 +1,7 @@
+.pink-yellow-linear{
+    background: $animation-bg-pink-yellow;
+    background-size: 200% 200%;
+    &:hover{
+        animation: Pinklinear 1s ease;
+    }
+}

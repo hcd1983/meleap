@@ -1,0 +1,70 @@
+//
+$primary:#000;
+$dark_main:#1b1e2d;
+$pink-linear: linear-gradient(100deg, #e74385 0%, #f5c53a 100%);
+$pink-linear-reverse:linear-gradient(100deg, #f5c53a 0%, #e74385 100%);
+$blue-linear: linear-gradient(90deg, rgba(89,71,153,1) 0%, rgba(64,116,185,1) 72%, rgba(51,153,204,1) 100%);
+$map-linear:linear-gradient(90deg, #811fff 0%, #3e7cde 72%, #0098e5 100%);
+$team-linear-management:linear-gradient(270deg, #fff000 0%, #f7b52c 25%, #e68316 75%, #db512b 100%);
+$team-linear-engineer:linear-gradient(90deg, #811fff 0%, #3e7cde 70%, #0098e5 100%);
+$team-linear-sales:linear-gradient(90deg, #00b1ed 0%,  #73ebc6 100%);
+$team-linear-event:linear-gradient(90deg, #d3327d 0%,  #d96c61 100%);
+$team-linear-corporate:linear-gradient(90deg, #cb6e9f 0%,  #faed00 100%);
+
+$animation-bg-pink-yellow: linear-gradient(100deg, #e74385 0%, #f5c53a 50%, #f5c53a 50%, #e74385 100%);
+
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl:1600px
+);
+
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl:1200px
+) !default;
+
+@import "bootstrap";
+
+// Required
+//@import "~normalize.css";
+//@import "~bootstrap/scss/functions";
+//@import "~bootstrap/scss/variables";
+//@import "~bootstrap/scss/mixins";
+
+// Optional
+//@import "node_modules/bootstrap/scss/reboot";
+//@import "~bootstrap/scss/type";
+//@import "~bootstrap/scss/images";
+//@import "node_modules/bootstrap/scss/code";
+//@import "~bootstrap/scss/grid";
+@import "animation";
+@import "inview";
+@import "general";
+@import "head_block";
+@import "full-screen-slider";
+@import "vertical-title";
+@import "youtube_block";
+@import "youtube-iframe-block";
+@import "search-input";
+@import "index";
+@import "company";
+@import "news";
+@import "news-single";
+@import "contact";
+@import "product-single";
+@import "marquee";
+@import "ainmation-background";
+@import "header-right";
+@import "header-mobile";
+//https://github.com/rochestb/jQuery.YoutubeBackground
+@import "youtube_bg";
+@import "footer-social-only";
+@import "responsive";

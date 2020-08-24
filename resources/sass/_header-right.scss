@@ -1,0 +1,45 @@
+#navbarSupportedContent{
+    position: relative;
+    .right-nav{
+        @extend .poppins;
+        position:absolute;
+        right:0;
+        top:-10px;
+        display: flex;
+        align-items: center;
+        .locale-switcher{
+            padding-right: 20px;
+            ul{
+                padding:0;
+                margin:0;
+                list-style: none;
+                display: flex;
+                li{
+                    list-style: none;
+                    padding-left: 10px;
+                    &:hover,&.current{
+                        a{
+                            color:#FFF;
+                        }
+                    }
+                    a{
+                        font-size: 16px;
+                        color:#c8c9ca;
+                        text-decoration: none;
+                        font-weight: 700
+                    }
+                }
+            }
+
+
+        }
+
+    }
+
+}
+
+.not-on-top{
+    .right-nav{
+        //margin-top: -8px;
+    }
+}
