@@ -132,7 +132,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/sass" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/components" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web.server" />
   </component>
@@ -190,7 +190,7 @@
       <workItem from="1597375474604" duration="7751000" />
       <workItem from="1597391699140" duration="75134000" />
       <workItem from="1597819610957" duration="189000" />
-      <workItem from="1597822757148" duration="42464000" />
+      <workItem from="1597822757148" duration="42589000" />
     </task>
     <servers />
   </component>
