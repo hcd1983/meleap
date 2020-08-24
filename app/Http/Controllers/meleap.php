@@ -13,11 +13,13 @@ class meleap extends Controller
     public $products = [];
     public $default_avatar = "https://apimeleap.it-monk.com/wp-content/uploads/2020/08/下載-1.jpg";
     public $IndexPageApi = "https://apimeleap.it-monk.com/wp-json/wp/v2/pages/107";
+    public $SettingsApi = "https://apimeleap.it-monk.com/wp-json/wp/v2/pages?slug=settings&per_page=1";
     public $CategoryApi = "https://apimeleap.it-monk.com/wp-json/wp/v2/categories";
 //    public $CategoryApi = "https://hado-official.com/en/wp-json/wp/v2/categories";
     public $PostApi = "https://apimeleap.it-monk.com/wp-json/wp/v2/posts/";
     public $ProductsApi = "https://apimeleap.it-monk.com/wp-json/wp/v2/product";
     public $PostApi_En = "";
+    public $PageSettingsStatic = false;
     public $localeRestID = [
         "jp"=>13,
         "en"=>14
@@ -74,11 +76,14 @@ class meleap extends Controller
 
         $this->products = $this->ProductsGetter();
 
+        $PageSettingsStatic = $this->PageSettings();
+
         view()->share('localeLink', $localeLink);
         view()->share('locale', $locale);
         view()->share('products', $this->products);
         view()->share('route_name', $route_name );
         view()->share('social_media', $social_media );
+        view()->share('page_setting', $PageSettingsStatic );
     }
 
     function MailTest(){
@@ -116,6 +121,7 @@ class meleap extends Controller
         $reacche["products"] = $this->GetProducts();
         $reacche["index"] = $this -> GetIndexData();
         $reacche["members"] = $this -> GetMembers();
+        $reacche["settings"] = $this -> GetPageSettings();
 
         dd($reacche);
         return "recache";
@@ -234,7 +240,8 @@ class meleap extends Controller
 
 
 
-        $_data = $this -> GetIndexData();
+        $_data = $this -> PageSettingsStatic;
+
 
         $marquee = [
             "jp" => [
@@ -290,6 +297,39 @@ class meleap extends Controller
         return view("index",$data);
     }
 
+    function GetPageSettings(){
+        $value = Cache::rememberForever('settings', function() {
+
+            $endpoint = $this -> SettingsApi;
+            $client = new \GuzzleHttp\Client();
+            $response = $client->request('GET', $endpoint, [
+                'verify'=>false
+            ]);
+            $statusCode = $response->getStatusCode();
+            $content = $response->getBody();
+            $IndexData = json_decode( $content->getContents() ,true);
+            return $IndexData;
+        });
+
+        return $value;
+    }
+
+    function PageSettings(){
+        $settings = $this->GetPageSettings();
+        if( is_array($settings) && count($settings) > 0){
+
+            $_settings = $settings[0];
+
+        }else{
+            abort('500');
+            $_settings = false;
+        }
+
+        $this -> PageSettingsStatic =  $_settings;
+
+        return $_settings;
+    }
+
     function GetIndexData(){
 
 //        $seconds = 600;
@@ -333,6 +373,11 @@ class meleap extends Controller
 
 
     function company(){
+
+        $_data = $this -> PageSettings();
+        $map = $_data["acf"]["google_map"];
+
+
         $_members = $this->GetMembers();
 
 //        dd($_members);
@@ -388,7 +433,7 @@ class meleap extends Controller
 
         }
 //        dd($departments);
-        return view("company",['departments'=>$departments]);
+        return view("company",['departments'=>$departments,"map"=>$map]);
     }
 
     function GetMembers(){
@@ -420,6 +465,9 @@ class meleap extends Controller
     }
 
     function contact(){
+
+
+
         return view("contact");
     }
     function product($locale,$slug){

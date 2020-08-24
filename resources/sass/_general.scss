@@ -21,7 +21,11 @@
 }
 
 #g-map{
-    height: 500px;
+    iframe{
+        height: 500px;
+        width: 100%;
+    }
+
 }
 
 .video-container {

@@ -109,7 +109,7 @@
         </h1>
     </div>
 
-    @component("components.google-map-style2")
+    @component("components.google-map-style2",["map"=>$map])
     @endcomponent
 
     <div id="team_members" class="section">

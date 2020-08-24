@@ -18049,8 +18049,9 @@ readers do not read off random characters that represent icons */
   animation-fill-mode: both;
 }
 
-#g-map {
+#g-map iframe {
   height: 500px;
+  width: 100%;
 }
 
 .video-container {
@@ -20050,7 +20051,7 @@ canvas.dots {
 
 #map {
   background-color: #1b1e2d;
-  padding: 190px 0 110px 0;
+  padding: 80px 0 110px 0;
 }
 
 #map .company-data {
@@ -20060,9 +20061,6 @@ canvas.dots {
 
 @media (min-width: 992px) {
   #map .company-data {
-    position: absolute;
-    top: -50px;
-    left: -100px;
     padding-right: 110px;
     padding-bottom: 75px;
   }
@@ -21145,7 +21143,7 @@ source {
     font-size: 12px;
   }
 
-  #map #g-map {
+  #map #g-map iframe {
     height: 60vw;
   }
 

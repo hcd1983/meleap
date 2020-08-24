@@ -375,7 +375,9 @@ $logo-image-size-mobile:40px;
         }
 
         #g-map{
-            height: 60vw;
+            iframe{
+                height: 60vw;
+            }
         }
     }
 
