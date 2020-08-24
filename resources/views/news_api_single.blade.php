@@ -78,7 +78,7 @@
                         <div class="post-breadcrumb d-flex justify-content-end align-items-end ">
                           <a href="{{route("news_api",["locale"=>$locale])}}" class="mr-3 d-none d-lg-block">Top</a>
                           <a href="javascript:void(0)" class="mr-3 d-none d-lg-block"><img src="{{URL::asset("images/bread_crumb_arrow.svg")}}"></a>
-                          <a href="{{route("news_api",["locale"=>$locale])}}">Activity</a>
+                          <a href="{{$single["post_category_url"]}}">{{$single["post_category"]}}</a>
                         </div>
                     </header>
                     <div class="article-content">

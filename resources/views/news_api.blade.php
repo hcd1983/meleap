@@ -45,6 +45,7 @@ $locale = \App::getLocale();
                         @foreach($posts as $key => $post)
                             @php
                                 $single = $post;
+                              //  dd($single);
                                 $thumbnail = "";
                                 $size = "medium";
                                 if(isset($single["better_featured_image"])){
@@ -57,7 +58,8 @@ $locale = \App::getLocale();
                                 }
                                 $single["thumbnail"] = $thumbnail;
                                 $single["date"] = date( "Y/m/d" , strtotime($post["date"]) ) ;
-                                $single["post_category"] = ["News","Activity","Others"][rand(0,2)];
+                               // $single["post_category"] = ["News","Activity","Others"][rand(0,2)];
+                                $single["post_category"] = isset( $single["post_category"]) ?  $single["post_category"] : "";
                                 $single["title"] = $post["title"]["rendered"];
                                 $single["permalink"] = $post["link"];
                                 $single["permalink"] = route("news_single_api",["locale"=>$locale,"id"=>$post["id"]]);

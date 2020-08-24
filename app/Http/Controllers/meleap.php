@@ -522,6 +522,23 @@ class meleap extends Controller
 
     }
 
+    function GetCategoryName($categories,$cid){
+        $res = [
+            "name" =>"",
+            "slug" => ""
+        ];
+
+        foreach ($categories as $key => $category){
+
+            if($category["id"] == $cid){
+                $res["name"] = $category["name"];
+                $res["slug"] = $category["slug"];
+                break;
+            }
+        }
+        return $res;
+    }
+
     function news_api($locale){
 
         $categories = $this->GetCategory();
@@ -529,7 +546,21 @@ class meleap extends Controller
 
         if(!$posts){
             abort(404);
+        }else{
+            foreach ($posts as $key => $post){
+                $post["post_category"] = "";
+                if( isset($post["categories"][0]) ){
+                    $cid =  $post["categories"][0];
+                    $post["post_category"] = $this->GetCategoryName($categories,$cid)["name"];
+                    $posts[$key] = $post;
+                }
+                $posts[$key] = $post;
+            }
+
         }
+//        dd($categories);
+//        dd($posts);
+
 
         return view("news_api",[
             "posts"=>$posts,
@@ -569,10 +600,26 @@ class meleap extends Controller
         }else{
 
             $posts = $this-> GetPosts($query=[
-                "per_page"=> $this -> postApiSetting["per_page"],
-//                "locale" => $localeId,
                 "categories" => $current_category["id"]
             ]);
+
+            $categories = $this->GetCategory();
+            $posts = $this-> GetPosts();
+
+            if(!$posts){
+                abort(404);
+            }else{
+
+                foreach ($posts as $key => $post){
+                    $post["post_category"] = "";
+                    if( isset($post["categories"][0]) ){
+                        $cid =  $post["categories"][0];
+                        $post["post_category"] = $this->GetCategoryName($categories,$cid)["name"];
+                        $posts[$key] = $post;
+                    }
+                    $posts[$key] = $post;
+                }
+            }
 //
             return view("news_api",[
                 "posts"=>$posts,
@@ -610,12 +657,27 @@ class meleap extends Controller
 
     function news_single_api($locale,$id){
 
-
+        $categories = $this->GetCategory();
         $post = $this -> GetPostbyID($id);
+        $locale = \App::getLocale();
 
         if(!$post){
             abort(404);
         }
+        $post["post_category"] = "";
+        $post["post_category_url"] = "#";
+
+        if($categories){
+            if( isset($post["categories"][0]) ){
+                $cid =  $post["categories"][0];
+                $post["post_category"] = $this->GetCategoryName($categories,$cid)["name"];
+                $post["post_category_url"] = route("news_api_category",[
+                    "locale"=>$locale,
+                    "slug" =>  $this->GetCategoryName($categories,$cid)["slug"]
+                ]);
+            }
+        }
+
 
 
         return view("news_api_single",["post"=>$post]);
