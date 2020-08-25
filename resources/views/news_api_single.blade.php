@@ -1,9 +1,13 @@
 @extends("page",[
     'title' => $title.' | MELEAP',
-    'current'=> 'news_api'
+    'current'=> 'news_api',
+    'social_title' => $post["title"]["rendered"].' | MELEAP',
+    'social_image' => $thumbnail,
+    'social_description'=>strip_tags($post["excerpt"]["rendered"]),
 ])
 @php
     $locale = \App::getLocale();
+    $current_url = url() -> current();
     $single = $post;
     $thumbnail = "";
     $size = "large";
@@ -15,6 +19,7 @@
       //     $thumbnail = $single["better_featured_image"]["media_details"]["sizes"][$size]["source_url"];
       // }
     }
+
 
    $title = $post["title"]["rendered"];
    $date = new DateTime($post["date"]);
@@ -59,8 +64,8 @@
                             <h2>{!! $title !!}</h2>
                         </div>
                         <div class="col-lg-12 justify-content-end align-items-end d-none d-lg-flex">
-                            <a href="https://www.addtoany.com/add_to/facebook?linkurl={{url()->current()}}" target="_blank"><div class="icon-ball mr-2"><i class="fab fa-facebook-square"></i></div></a>
-                            <a href="#"><div class="icon-ball"><i class="fab fa-twitter"></i></div></a>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u={{$current_url}}" target="_blank"><div class="icon-ball mr-2"><i class="fab fa-facebook-square"></i></div></a>
+                            <a href="https://twitter.com/intent/tweet/?text={{urlencode($title)}}&url={{$current_url}}" target="_blank"><div class="icon-ball"><i class="fab fa-twitter"></i></div></a>
                         </div>
                     </div>
                 </div>

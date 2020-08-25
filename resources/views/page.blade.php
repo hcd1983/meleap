@@ -18,6 +18,30 @@ $nav["contact"] = ["text"=>"contact","url"=> route('contact', ["locale"=> $local
 $homeurl = route('home', ["locale"=> $locale]);
 $products = $products[$locale];
 
+$social_image_default = "";
+$social_title_default = "";
+$social_description_default = "";
+
+if(isset($page_setting["acf"])){
+
+    $_settings = $page_setting["acf"];
+
+    $social_image_default = isset($_settings["social_media_image"]) ? $_settings["social_media_image"] : "";
+    $social_title_default = isset($_settings["social_media_title"]) ? $_settings["social_media_title"] : "";
+    $social_description_default = isset($_settings["social_media_description"]) ? $_settings["social_media_description"] : "";
+
+    if($locale == "en"){
+        $social_image_default = isset($_settings["social_media_image_en"]) &&  $_settings["social_media_image_en"]? $_settings["social_media_image_en"] : $social_image_default;
+        $social_title_default = isset($_settings["social_media_title_en"]) &&  $_settings["social_media_title_en"] ? $_settings["social_media_title_en"] : $social_title_default;
+        $social_description_default = isset($_settings["social_media_description_en"]) &&  $_settings["social_media_description_en"] ? $_settings["social_media_description_en"] : $social_description_default;
+    }
+
+}else{
+    $_settings = [];
+}
+
+
+
 @endphp
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="lang-{{$locale}}">
@@ -26,6 +50,20 @@ $products = $products[$locale];
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="description" content="{{$title}}">
+    <meta name="keywords" content="HADO, HadoBall, Meleap, AR">
+    <meta name="author" content="Mounts Studio">
+
+    <meta property="og:title" content="{{$social_title ?? $social_title_default}}">
+    <meta property="og:description" content="{{$social_description ?? $social_description_default}}">
+    <meta property="og:image" content="{{$social_image ?? $social_image_default}}">
+    <meta property="og:url" content="{{url()->current()}}">
+
+    <meta name="twitter:title" content="{{$social_title ?? $social_title_default}}">
+    <meta name="twitter:description"content="{{$social_description ?? $social_description_default}}">
+    <meta name="twitter:image" content="{{$social_image ?? $social_image_default}}">
+    <meta name="twitter:card" content="summary_large_image">
 
     {{--FAVICON--}}
     <link rel=icon href="{{$favico}}" sizes="16x16" type="image/png">
