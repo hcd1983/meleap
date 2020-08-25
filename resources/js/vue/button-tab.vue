@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="form-display" :class="{'active':show}">
-            <form-events v-if="current && current.slug == 'events'" :form-data="FormData">
+            <form-events v-if="current && current.slug == 'events'" :form-data="FormData" @submit="form_submit">
                 <template slot="befor_submit_button" >
                     <h4>＜お問い合わせへのご回答について＞</h4>
                     <ul>
@@ -27,7 +27,7 @@
                     </ul>
                 </template>
             </form-events>
-            <form-media v-if="current && current.slug == 'media'" :form-data="FormData">
+            <form-media v-if="current && current.slug == 'media'" :form-data="FormData"  @submit="form_submit">
                 <template slot="befor_submit_button" >
                     <h4>＜お問い合わせへのご回答について＞</h4>
                     <ul>
@@ -164,6 +164,10 @@
                 setTimeout(function () {
                     self.show = true;
                 },1800)
+            },
+            form_submit(data){
+
+                console.log(data);
             }
         }
     }

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <form @submit.prevent="submit" class="contact-form">
+        <form @submit="submit" class="contact-form">
 
             <div class="form-group required">
                 <label>お名前</label>
@@ -26,7 +26,7 @@
             <slot name="befor_submit_button"></slot>
 
             <div>
-                <button class="btn btn-submit" type="submit">送信內容確認 <i class="fas fa-chevron-right"></i></button>
+                <button class="btn btn-submit" type="submit" >送信內容確認 <i class="fas fa-chevron-right"></i></button>
             </div>
 
         </form>
@@ -62,7 +62,7 @@
         },
         methods:{
             submit(){
-
+                console.log("SS");
                 let formData = new FormData( document.querySelector(".contact-form") );
                 this.$emit("submit",this.data);
 

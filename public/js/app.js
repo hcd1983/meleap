@@ -14049,6 +14049,9 @@ __webpack_require__.r(__webpack_exports__);
       setTimeout(function () {
         self.show = true;
       }, 1800);
+    },
+    form_submit: function form_submit(data) {
+      console.log(data);
     }
   }
 });
@@ -14309,6 +14312,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     submit: function submit() {
+      console.log("SS");
       var formData = new FormData(document.querySelector(".contact-form"));
       this.$emit("submit", this.data);
     }
@@ -44422,7 +44426,10 @@ var render = function() {
         _vm.current && _vm.current.slug == "events"
           ? _c(
               "form-events",
-              { attrs: { "form-data": _vm.FormData } },
+              {
+                attrs: { "form-data": _vm.FormData },
+                on: { submit: _vm.form_submit }
+              },
               [
                 _c("template", { slot: "befor_submit_button" }, [
                   _c("h4", [_vm._v("＜お問い合わせへのご回答について＞")]),
@@ -44449,7 +44456,10 @@ var render = function() {
         _vm.current && _vm.current.slug == "media"
           ? _c(
               "form-media",
-              { attrs: { "form-data": _vm.FormData } },
+              {
+                attrs: { "form-data": _vm.FormData },
+                on: { submit: _vm.form_submit }
+              },
               [
                 _c("template", { slot: "befor_submit_button" }, [
                   _c("h4", [_vm._v("＜お問い合わせへのご回答について＞")]),
@@ -45217,15 +45227,7 @@ var render = function() {
   return _c("div", [
     _c(
       "form",
-      {
-        staticClass: "contact-form",
-        on: {
-          submit: function($event) {
-            $event.preventDefault()
-            return _vm.submit($event)
-          }
-        }
-      },
+      { staticClass: "contact-form", on: { submit: _vm.submit } },
       [
         _c("div", { staticClass: "form-group required" }, [
           _c("label", [_vm._v("お名前")]),
