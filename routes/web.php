@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/MailTest','meleap@MailTest')->name('mailtest');
+Route::post('/FormSubmit','meleap@FormSubmit')->name('FormSubmit');
 
 Route::get('/mobile',function(){
     return view("mobile");

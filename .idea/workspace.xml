@@ -132,17 +132,17 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/form" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web.server" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\sites\meleap\resources\views\form" />
       <recent name="D:\sites\meleap\resources\views\components" />
       <recent name="D:\sites\meleap\resources\sass" />
       <recent name="D:\wamp64\www\allrover_en" />
       <recent name="D:\sites\meleap\resources\js\vue" />
-      <recent name="D:\sites\meleap\resources\lang\en" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\sites\meleap\resources\lang" />
@@ -190,7 +190,7 @@
       <workItem from="1597375474604" duration="7751000" />
       <workItem from="1597391699140" duration="75134000" />
       <workItem from="1597819610957" duration="189000" />
-      <workItem from="1597822757148" duration="75234000" />
+      <workItem from="1597822757148" duration="90633000" />
     </task>
     <servers />
   </component>
@@ -198,10 +198,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="635" y="326" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1597717754796">
+    <state x="635" y="326" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1598416173104">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="635" y="326" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1597717754796" />
+    <state x="635" y="326" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1598416173104" />
     <state x="643" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1597029973790">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -214,11 +214,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1597625286407" />
-    <state x="777" y="443" key="NewPhpFileDialog" timestamp="1598286502139">
+    <state x="777" y="443" key="NewPhpFileDialog" timestamp="1598368413684">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="777" y="443" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593656942586" />
-    <state x="777" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598286502139" />
+    <state x="777" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598368413684" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1597387809999">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

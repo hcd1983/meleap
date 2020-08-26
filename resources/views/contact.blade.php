@@ -4,9 +4,56 @@
 ])
 @php
     $locale = app::getLocale();
+
+    if($locale == "en"){
+
+        $tabs = [
+            [
+                "text" => "Business Inquiry",
+                "slug" =>"business",
+            ],
+            [
+                "text" => "Press or Media Inquiry",
+                "slug" =>"press",
+            ],
+            [
+                "text" => "Player Inquiry",
+                "slug" =>"player",
+            ]
+        ];
+
+    }else{
+
+
+
+        $tabs = [
+            [
+                "text" => "導入またはイベントでの活用をご検討されている方",
+                "slug" =>"events",
+            ],
+            [
+                "text" => "プレス・メディアの方はこちら",
+                "slug" =>"media",
+            ],
+            [
+                "text" => "プレイヤーの方はこちら",
+                "slug" =>"play",
+            ],
+            [
+                "text" => "その他のお問合せの方はこちら",
+                "slug" =>"query",
+            ]
+        ];
+
+    }
+
+
+
 @endphp
 @section("head")
-
+    <script>
+        let tabs = {!! json_encode($tabs) !!}
+    </script>
 @endsection
 @section("content")
 
@@ -27,7 +74,38 @@
                     <h3 class="text-lg-center text-left">{!! __("contact.please.fill") !!}</h3>
                 </div>
 
-                <button-tab locale="{{$locale}}"></button-tab>
+
+                <button-tab  :tabs='{!! json_encode($tabs) !!}'>
+
+                    <template slot="events">
+                        @include("form.events")
+                    </template>
+
+                    <template slot="media">
+                        @include("form.media")
+                    </template>
+
+                    <template slot="play">
+                        @include("form.play")
+                    </template>
+
+                    <template slot="query">
+                        @include("form.play")
+                    </template>
+
+                    <template slot="business">
+                        @include("form.business")
+                    </template>
+
+                    <template slot="press">
+                        @include("form.press")
+                    </template>
+
+                    <template slot="player">
+                        @include("form.player")
+                    </template>
+
+                </button-tab>
 
 
             </div>

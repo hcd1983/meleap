@@ -105,6 +105,11 @@ class meleap extends Controller
         view()->share('page_setting', $PageSettingsStatic );
     }
 
+    function FormSubmit(Request $request){
+        return  $request->all();
+        return json_encode(["status"=>"success"]);
+    }
+
     function MailTest(){
 
         $to = "Dean Huang <hcd@mojopot.com>,hcd@hcd-design-studio.com";
