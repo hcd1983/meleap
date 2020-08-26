@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div :class="{global:locale != 'jp'}">
         <div class="tabs">
             <div  v-for="tab,index in tabs" class="btn text-left poppins" :class="{active:current == tab}" @click="active(tab)">{{tab.text}}</div>
         </div>
@@ -57,6 +57,10 @@
                 default:function(){
                     return [];
                 }
+            },
+            locale:{
+                type:String,
+                default:"jp"
             }
         },
         methods:{
@@ -147,6 +151,17 @@
             span:nth-child( #{$i}) {
                 //background-color: lighten($base-color, $i * 5%);
                 animation-delay: $i * .05 + .5s;
+            }
+        }
+    }
+
+    .global{
+        .form-display::v-deep{
+            .required{
+                > label:after{
+                    content:" *";
+                }
+
             }
         }
     }

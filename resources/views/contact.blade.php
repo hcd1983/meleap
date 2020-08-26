@@ -75,7 +75,7 @@
                 </div>
 
 
-                <button-tab  :tabs='{!! json_encode($tabs) !!}'>
+                <button-tab  :tabs='{!! json_encode($tabs) !!}' locale="{{$locale}}">
 
                     <template slot="events">
                         @include("form.events")
