@@ -2,23 +2,23 @@
 <form id="contact-form" class="contact-form" @submit.prevent="FormSubmit('{{route("FormSubmit")}}')">
 
     <div class="form-group required">
-        <label>お名前</label>
+        <label data-label="name">お名前</label>
         <input type="text" class="form-control" name="name" required>
     </div>
     <div class="form-group required">
-        <label>メールアドレス</label>
+        <label data-label="email">メールアドレス</label>
         <input type="email" class="form-control" name="email" required>
     </div>
     <div class="form-group required">
-        <label>会社名</label>
+        <label data-label="company">会社名</label>
         <input type="text" class="form-control" name="company" required>
     </div>
     <div class="form-group required">
-        <label>電話番号</label>
+        <label data-label="tel">電話番号</label>
         <input type="text" class="form-control" name="tel" required>
     </div>
     <div class="form-group required">
-        <label>お問い合わせ内容</label>
+        <label data-label="message">お問い合わせ内容</label>
         <textarea class="form-control" name="message" required></textarea>
     </div>
 

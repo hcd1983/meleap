@@ -1,5 +1,5 @@
 @extends("page",[
-    'title' => 'Contact | MELEAP',
+    'title' => __("contact.contact").' | MELEAP',
     'current'=> 'contact'
 ])
 @php

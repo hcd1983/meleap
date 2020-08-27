@@ -2,23 +2,23 @@
 <form id="contact-form" class="contact-form" @submit.prevent="FormSubmit('{{route("FormSubmit")}}')">
 
     <div class="form-group required">
-        <label>お名前</label>
+        <label data-label="name">お名前</label>
         <input type="text" class="form-control" name="name" required>
     </div>
     <div class="form-group required">
-        <label>メールアドレス</label>
+        <label data-label="email">メールアドレス</label>
         <input type="email" class="form-control" name="email" required>
     </div>
     <div class="form-group required">
-        <label>会社名</label>
+        <label data-label="company">会社名</label>
         <input type="text" class="form-control" name="company" required>
     </div>
     <div class="form-group required">
-        <label>電話番号</label>
+        <label data-label="tel">電話番号</label>
         <input type="text" class="form-control" name="tel" required>
     </div>
     <div class="form-group required">
-        <label>HADOのご検討状況をお聞かせください </label><br>
+        <label data-label="usehado">HADOのご検討状況をお聞かせください </label><br>
         <template v-for="option,index in ['HADOの導入を検討している','HADOを含め情報収集している段階である']">
             <div class="form-check d-block d-lg-inline-block mr-lg-4">
                 <input class="form-check-input" type="radio" :id="'usehado' + index" :value="option" name="usehado">
@@ -30,7 +30,7 @@
     </div>
 
     <div class="form-group required">
-        <label>希望するプランをお聞かせください</label><br>
+        <label data-label="plan">希望するプランをお聞かせください</label><br>
         <template v-for="option,index in ['HADOを常設コンテンツとして利用したい','HADOをイベントで利用したい（商業施設、地域活性化、テーマパークなど）','HADO法人向けプログラム（社員旅行、懇親会、社員研修、社員総会、周年イベントなど）で利用したい']">
             <div class="form-check d-block d-lg-inline-block mr-lg-4">
                 <input class="form-check-input" type="radio" :id="'plan' + index" :value="option" name="plan">
@@ -42,7 +42,7 @@
     </div>
 
     <div class="form-group required">
-        <label>HADOの導入希望エリアをお聞かせください(複数回答可)</label><br>
+        <label data-label="fromplace">HADOの導入希望エリアをお聞かせください(複数回答可)</label><br>
         <template
             v-for="option,index in
                         ['北海道',
@@ -56,19 +56,19 @@
                         'その他'
                         ]">
             <div class="form-check">
-                <input  type="checkbox" :id="'form-place'+index" :value="option" class="form-check-input" name="formplace">
+                <input  type="checkbox" :id="'form-place'+index" :value="option" class="form-check-input" name="fromplace">
                 <label :for="'form-place'+index" class="form-check-label">@{{option}}</label>
             </div>
         </template>
     </div>
 
     <div class="form-group required">
-        <label>詳細な導入場所についてお知らせください</label>
+        <label data-label="placedetail">詳細な導入場所についてお知らせください</label>
         <textarea class="form-control" required name="placedetail"></textarea>
     </div>
 
     <div class="form-group required">
-        <label>ご希望のコンテンツをお知らせください </label><br>
+        <label data-label="hadotype">ご希望のコンテンツをお知らせください </label><br>
         <template v-for="option,index in
                     ['HADO',
                     'HADO MONSTER BATTLE',
@@ -84,7 +84,7 @@
     </div>
 
     <div class="form-group required">
-        <label>ご予算イメージをお聞かせください</label>
+        <label data-label="budget">ご予算イメージをお聞かせください</label>
         <select  class="form-control" style="max-width: 270px;" name="budget">
             <option v-for="option,index in [
                         '特に決まってない・不明',
@@ -100,7 +100,7 @@
     </div>
 
     <div class="form-group">
-        <label>HADOをどこで知りましたか？</label><br>
+        <label data-label="whereknow">HADOをどこで知りましたか？</label><br>
         <template
             v-for="option,index in
                         ['Facebook',
@@ -121,7 +121,7 @@
     </div>
 
     <div class="form-group">
-        <label>その他ご要望があれば、お聞かせください</label>
+        <label data-label="other">その他ご要望があれば、お聞かせください</label>
         <textarea class="form-control"  style="min-height: 100px;" name="other"></textarea>
     </div>
 

@@ -25,7 +25,7 @@ class meleap extends Controller
     public $CategoryApi_en = "https://hado-official.com/en/wp-json/wp/v2/categories/?hide_empty=true";
     public $PageSettingsStatic = false;
     public $postApiSetting = [
-        "per_page" => 9,
+        "per_page" => 6,
         "order" => 'desc',
         "orderby" => "date"
 //        "orderby"=>'menu_order'

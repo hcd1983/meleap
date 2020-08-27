@@ -14372,7 +14372,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
       return _date.getFullYear() + "/" + (_date.getMonth() + 1) + "/" + _date.getDate();
       ;
-    }
+    } // post_title(single){
+    //     var txt = document.createElement('textarea');
+    //     txt.innerHTML = single.title.rendered;
+    //     console.log(txt.value);
+    //     return txt.value;
+    // }
+
   }
 });
 
@@ -44743,9 +44749,10 @@ var render = function() {
             _vm._v(" "),
             _c("footer", [
               _c("a", { attrs: { href: _vm.permalink(single) } }, [
-                _c("h3", { staticClass: "mt-3 mb-1" }, [
-                  _vm._v(_vm._s(single.title.rendered))
-                ])
+                _c("h3", {
+                  staticClass: "mt-3 mb-1",
+                  domProps: { innerHTML: _vm._s(single.title.rendered) }
+                })
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "text-right" }, [

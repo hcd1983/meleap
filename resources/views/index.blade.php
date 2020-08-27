@@ -1,5 +1,5 @@
 @extends("page",[
-    'title' => '',
+    'title' => 'Rock the World | Meleap',
     'current'=> 'home'
     ])
 @php

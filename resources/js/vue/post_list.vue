@@ -12,7 +12,7 @@
                     </a>
                      <footer>
                             <a :href="permalink(single)">
-                                <h3 class="mt-3 mb-1">{{single.title.rendered}}</h3>
+                                <h3 class="mt-3 mb-1" v-html="single.title.rendered"></h3>
                              </a>
                         <div class="text-right">
                             <a :href="permalink(single)" class="readmore poppins font-weight-bold font-italic mr-1">
@@ -68,7 +68,13 @@
                 let _date = new Date(single.date);
 
                 return _date.getFullYear() + "/"+ ( _date.getMonth() + 1)  + "/"+ _date.getDate();;
-            }
+            },
+            // post_title(single){
+            //     var txt = document.createElement('textarea');
+            //     txt.innerHTML = single.title.rendered;
+            //     console.log(txt.value);
+            //     return txt.value;
+            // }
         }
 
     }
