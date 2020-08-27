@@ -21,7 +21,6 @@ class meleap extends Controller
 //    public $CategoryApi = "https://hado-official.com/en/wp-json/wp/v2/categories";
     public $PostApi = "https://apimeleap.it-monk.com/wp-json/wp/v2/posts/";
     public $ProductsApi = "https://apimeleap.it-monk.com/wp-json/wp/v2/product";
-
     public $PostApi_en = "https://hado-official.com/en/wp-json/wp/v2/posts/";
     public $CategoryApi_en = "https://hado-official.com/en/wp-json/wp/v2/categories/?hide_empty=true";
     public $PageSettingsStatic = false;
@@ -223,6 +222,16 @@ class meleap extends Controller
 
     }
 
+    function GetCategoryApiUrl(){
+        $locale = \App::getLocale();
+        if($locale == "en"){
+            $endpoint = $this -> CategoryApi_en;
+        }else{
+            $endpoint = $this -> CategoryApi;
+        }
+        return $endpoint;
+    }
+
     function GetCategory(){
 
         $locale = \App::getLocale();
@@ -242,6 +251,17 @@ class meleap extends Controller
         $IndexData = json_decode( $content->getContents() ,true);
         return $IndexData;
 
+    }
+
+    function GetPostsApiUrl($query=[]){
+        $locale = \App::getLocale();
+        if($locale == "en"){
+            $url = $this -> PostApi_en;
+        }else{
+            $url = $this -> PostApi;
+        }
+        $_query = array_merge($this->postApiSetting,$query);
+        return $url."?".http_build_query($_query);
     }
 
     function GetPosts($query=[]){
@@ -503,9 +523,6 @@ class meleap extends Controller
     }
 
     function contact(){
-
-
-
         return view("contact");
     }
     function product($locale,$slug){
@@ -546,6 +563,7 @@ class meleap extends Controller
 
     function news_api($locale){
 
+        return $this -> news_api_list_by_vue();
         $categories = $this->GetCategory();
         $posts = $this-> GetPosts();
 
@@ -563,9 +581,6 @@ class meleap extends Controller
             }
 
         }
-//        dd($categories);
-//        dd($posts);
-
 
         return view("news_api",[
             "posts"=>$posts,
@@ -575,12 +590,18 @@ class meleap extends Controller
             "total_posts" => $this->totalPosts,
         ]);
 
+    }
 
-        echo $res->getStatusCode();
-// "200"
-        echo $res->getHeader('content-type')[0];
-// 'application/json; charset=utf8'
-        echo $res->getBody();
+    function news_api_list_by_vue($slug=null){
+
+        $categoriesUrl = $this -> GetCategoryApiUrl();
+        $postsUrl = $this -> GetPostsApiUrl();
+
+        return view("news_api_vue",[
+            "CategoryApiUrl"=> $categoriesUrl,
+            "PostsApiUrl"=> $postsUrl,
+            "slug"=>$slug,
+        ]);
 
     }
 
@@ -589,6 +610,8 @@ class meleap extends Controller
         if($slug == null){
             abort('404');
         }
+
+        return $this -> news_api_list_by_vue($slug);
 
         $categories = $this->GetCategory();
         $current_category = null;
@@ -695,86 +718,7 @@ class meleap extends Controller
 
     }
 
-    function news_single($slug){
 
-        $data = [];
-        $data["title"] = "HADO WORLD CUP 2019<br>フォトギャラリー公開！";
-        $data["permalink"] = "#";
-        $data["slug"] = "ok";
-        $data["cover"] = url("images/news-1.png");
-        $data["category"] = "Activity";
-        $data["date_y"] = "2020";
-        $data["date_m"] = "06";
-        $data["date_d"] = "06";
-
-        $data["content"] = [
-            [
-                "type"=>"image",
-                "image"=>url("images/news-3.png"),
-                "content"=>"
-                    <h2>meleap公式アルバム利用ガイドラインについて</h2>
-                    <blockquote>2019年12月15日(土)に開催された「HADO WORLD CUP 2019」<br>のステージ上での熱戦や、舞台裏の様子などを写したフォトギャラリーを公開いたします。9つの国と地域の代表16チームが世界一をかけて繰り広げた熱戦の貴重な瞬間を切り取った写真をぜひご覧ください！</blockquote>
-                    <p>meleapは当社が創造するコンテンツに対して、お客様が情熱をもってその体験が広く共有されることを推奨・応援したいと考えております。その中で、本ガイドラインは、個人であるお客様を対象に、meleap公式アルバムで公開されたメディアを活用するにあたっての オフィシャルガイドラインとして作成されたものです。個人であるお客様が、meleap公式アルバム内で meleap が著作権を有する映像、写真およびスクリーンショット（以下「meleapの著作物」といいます）を利用した動画や静止画等を、適切な共有サイトに投稿する際は、このガイドラインに従っていただく必要がありますのでご注意ください。</p>
-
-                "
-            ],
-            [
-                "type"=>"video",
-                "youtube_id"=>"TjbtH_MxDQI",
-                "content"=>"
-                    <h3>2019年12月15日(土)に開催された<br>
-「HADO WORLD CUP 2019」のステージ上での熱戦や、<br>
-舞台裏の様子などを写したフォトギャラリーを公開いたします。</h3>
-                    <p>人であるお客様は、meleap公式アルバム内のmeleapの著作物を利用した動
-画や静止画等を、営利を目的としない場合に限り、投稿することができます。
-個人であるお客様は、meleap公式アルバムで公開されたmeleapの著作物を、
-投稿に利用することができます。<br>
-meleapは、違法または不適切な投稿や公序良俗に反する投稿、このガイドライ
-ンに従わない投稿に対して、法的措置を講じる権利を保持しています。
-meleapは、このガイドラインに関する個別のお問い合わせにはお答えいたしま
-せん。ご了承ください。<br>
-※このガイドラインは、随時更新されますので、投稿前に必ず最新のガイドライ
-ンをご確認いただきますようお願いいたします。</p>
-              "
-            ],
-            [
-                "type"=>"text",
-                "content"=>"
-                    <p>2019年12月15日(土)に開催された「HADO WORLD CUP 2019」<br>のステージ上での熱戦や、舞台裏の様子などを写したフォトギャラリーを公開いたします。9つの国と地域の代表16チームが世界一をかけて繰り広げた熱戦の貴重な瞬間を切り取った写真をぜひご覧ください！</p>
-
-                "
-            ],
-            [
-                "type"=>"image",
-                "image"=>url("images/soccer.jpg"),
-                "content"=>"
-                    <p>2019年12月15日(土)に開催された「HADO WORLD CUP 2019」<br>のステージ上での熱戦や、舞台裏の様子などを写したフォトギャラリーを公開いたします。9つの国と地域の代表16チームが世界一をかけて繰り広げた熱戦の貴重な瞬間を切り取った写真をぜひご覧ください！</p>
-                    <p>※ビジネスでのメディア利用に関しては別途お<br>
-                    問い合わせフォーム( <a href='https://meleap.com/contact2/'>https://meleap.com/contact2/</a> )
-                    </p>
-              "
-            ],
-            [
-                "type"=>"text",
-                "content"=>"
-                    <p>2019年12月15日(土)に開催された「HADO WORLD CUP 2019」<br>のステージ上での熱戦や、舞台裏の様子などを写したフォトギャラリーを公開いたします。9つの国と地域の代表16チームが世界一をかけて繰り広げた熱戦の貴重な瞬間を切り取った写真をぜひご覧ください！</p>
-
-                    <p>meleapは当社が創造するコンテンツに対して、お客様が情熱をもってその体験が広く共有されることを推奨・応援したいと考えております。その中で、本ガイドラインは、個人であるお客様を対象に、meleap公式アルバムで公開されたメディアを活用するにあたっての オフィシャルガイドラインとして作成されたものです。個人であるお客様が、meleap公式アルバム内で meleap が著作権を有する映像、写真およびスクリーンショット（以下「meleapの著作物」といいます）を利用した動画や静止画等を、適切な共有サイトに投稿する際は、このガイドラインに従っていただく必要がありますのでご注意ください。</p>
-              "
-            ],
-
-        ];
-
-        $data["next_post_link"] = route("news-single",["slug"=>"next"]);
-        $data["next_post_title"] = "森渉さんのゲスト出演が決定！その他出演者情報発表！";
-        $data["next_post_date"] = "2020.06.04";
-        $data["prev_post_link"] = route("news-single",["slug"=>"prev"]);
-        $data["prev_post_title"] = "CLIMAX SEASON 2019 大会エントリー開始！";
-        $data["prev_post_date"] = "2020.06.08";
-
-        return view("news_single",$data);
-
-    }
 
     function test(){
         return view("test");

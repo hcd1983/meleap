@@ -5,9 +5,16 @@ import grid_bg from "./vue/grid-bg.vue";
 import button_tab from "./vue/button-tab.vue";
 import range_bar from "./vue/range-bar.vue";
 import top_search_block from "./vue/top-search-block.vue";
+import category_list from "./vue/category_list";
+import post_list from "./vue/post_list";
+import news_list from "./vue/news-list";
+import news_pagination from "./vue/news-pagination";
 import rellax from "rellax";
 import inView from "in-view";
+import loading from "./vue/loading";
 require('./bootstrap');
+
+Vue.prototype.$axios = axios;
 
 window.Rellax = rellax;
 window.jQuery = window.$ = jQuery;
@@ -28,7 +35,12 @@ let app = new Vue({
         'grid-bg': grid_bg,
         'button-tab': button_tab,
         'range-bar':range_bar,
-        'top-search-block':top_search_block
+        'top-search-block':top_search_block,
+        'news-list':news_list,
+        'category-list':category_list,
+        'post-list':post_list,
+        'news-pagination':news_pagination,
+        'loading':loading,
     },
     watch:{
       owl_slider(newValue){

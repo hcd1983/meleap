@@ -50,7 +50,7 @@
                 $parameters["page"] = $current_page + 1;
                 $link = route( $route_name,$parameters);
             @endphp
-            <li class="page-item"><a class="page-link" href="{{$link}}">Next</a></li>
+           <a class="page-link" href="{{$link}}">Next</a>
         </li>
 
     </ul>

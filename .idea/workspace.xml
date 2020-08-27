@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6cd07553-4af4-41b2-a20b-a107b20f5c50" name="Default Changelist" comment="" />
+    <list default="true" id="6cd07553-4af4-41b2-a20b-a107b20f5c50" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/js/vue/category_list.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/vue/loading.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/vue/news-list.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/vue/news-pagination.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/vue/post_list.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/news_api_vue.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/meleap.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/meleap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/_news.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_news.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/pagination.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/pagination.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,6 +37,9 @@
         <option value="Vue Single File Component" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -132,20 +148,20 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/form" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/vue" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web.server" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\sites\meleap\resources\lang" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\sites\meleap\resources\js\vue" />
+      <recent name="D:\sites\meleap\resources\views" />
       <recent name="D:\sites\meleap\resources\views\form" />
       <recent name="D:\sites\meleap\resources\views\components" />
       <recent name="D:\sites\meleap\resources\sass" />
-      <recent name="D:\wamp64\www\allrover_en" />
-      <recent name="D:\sites\meleap\resources\js\vue" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\sites\meleap\resources\lang" />
     </key>
   </component>
   <component name="RunManager">
@@ -191,6 +207,7 @@
       <workItem from="1597391699140" duration="75134000" />
       <workItem from="1597819610957" duration="189000" />
       <workItem from="1597822757148" duration="91956000" />
+      <workItem from="1598423475663" duration="20657000" />
     </task>
     <servers />
   </component>
@@ -247,11 +264,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="242" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1595059698831" />
-    <state x="623" y="229" width="672" height="678" key="search.everywhere.popup" timestamp="1597724296999">
+    <state x="623" y="229" width="672" height="678" key="search.everywhere.popup" timestamp="1598432246805">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="229" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593604850221" />
-    <state x="623" y="229" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597724296999" />
+    <state x="623" y="229" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598432246805" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
