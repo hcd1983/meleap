@@ -1,23 +1,26 @@
 <template>
     <div class="loading">
         <div>
-            <span>L</span>
-            <span>O</span>
-            <span>A</span>
-            <span>D</span>
-            <span>I</span>
-            <span>N</span>
-            <span>G</span>
-            <span>.</span>
-            <span>.</span>
-            <span>.</span>
+            <span v-for="letter,key in textArray">{{letter}} </span>
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: "loading"
+        name: "loading",
+        props:{
+            text:{
+                type:String,
+                default:"LOADING...",
+            }
+        },
+        computed:{
+            textArray(){
+                let text = this.text;
+                return  text.split("");
+            }
+        }
     }
 </script>
 

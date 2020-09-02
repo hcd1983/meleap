@@ -113,7 +113,7 @@ if(isset($page_setting["acf"])){
                             <li class="{{ $locale == "en" ? "current":"" }}"><a href="{{$localeLink["en"]}}">EN</a></li>
                         </ul>
                     </div>
-                    <top-search-block action="#"></top-search-block>
+                    <top-search-block action="{{route("search",["locale"=>$locale])}}" query-value="{{$search ?? ""}}"></top-search-block>
                 </div>
             </div>
 
@@ -209,6 +209,9 @@ if(isset($page_setting["acf"])){
 
         $("#nav-bottom-bar").css("opacity","1");
         $(window).scroll();
+
+        $("body").addClass("is-load");
+
 
         // $("body").niceScroll();
 

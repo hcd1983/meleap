@@ -12,8 +12,8 @@
                         l2.377-1.831l4.179,5.423L28.168,33.044z" />
                 </svg>
             </div>
-            <input type="text" placeholder="Search" name="s">
-            <button type="submit">Search</button>
+            <input type="text" placeholder="Search" name="query" v-model="queryValue">
+            <button type="submit">✔</button>
         </form>
     </div>
 
@@ -38,7 +38,7 @@
               }
             }
         },
-        props:["action"]
+        props:["action","queryValue"]
     }
 </script>
 
@@ -63,10 +63,27 @@
         transition: all .5s ease;
         position: relative;
 
+        button {
+            position: absolute;
+            width: 50px;
+            height: calc(100% - 4px);
+            border-radius: 100px;
+            right: 3px;
+            top: 2px;
+            outline: none;
+            border: none;
+            opacity:0;
+            transition: all .3s .5s ease;
+        }
+
         &.open{
             width: 200px;
             input{
                 opacity: 1;
+            }
+
+            button {
+                opacity:1;
             }
         }
 
@@ -131,7 +148,7 @@
                 height: 50px;
             }
             button{
-                display:none;
+                /*display:none;*/
             }
         }
 

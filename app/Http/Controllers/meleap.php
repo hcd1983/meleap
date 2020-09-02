@@ -105,8 +105,39 @@ class meleap extends Controller
     }
 
     function FormSubmit(Request $request){
-        return  $request->all();
-        return json_encode(["status"=>"success"]);
+        $data = $request->all();
+        $status = $this ->  SendContactMail($data);
+        return $status;
+//        return view('emails.template-1',$data);
+
+//        return  $request->input('title');
+//        return json_encode(["status"=>"success"]);
+    }
+
+    function SendContactMail($data){
+
+
+        $from = $this -> PageSettingsStatic["acf"]["send_mail_from"];
+        $fromName = $this -> PageSettingsStatic["acf"]["send_mail_from_name"];
+        $to = $this -> PageSettingsStatic["acf"]["send_mail_to"].",".$data["email"];
+
+        if($fromName){
+            $from = $fromName."<".$from.">";
+        }
+
+//        $to = "Dean Huang <hcd@mojopot.com>,hcd@hcd-design-studio.com";
+        $subject = $data["title"]." - ";
+        $subject .= isset($data["company"])? $data["company"] :$data["name"];
+        $message = view('emails.template-1',$data);
+        $headers = [];
+        $headers[] = 'From: ' . $from ;
+        $headers[] =  'Reply-To: ' . $data["email"] ;
+        $headers[] =  'X-Mailer: PHP/' . phpversion();
+        $headers[] = 'MIME-Version: 1.0';
+        $headers[] = 'Content-type: text/html; charset=iso-8859-1';
+
+        $status = mail($to,$subject,$message,implode("\r\n", $headers));
+        return $status;
     }
 
     function MailTest(){
@@ -592,7 +623,7 @@ class meleap extends Controller
 
     }
 
-    function news_api_list_by_vue($slug=null){
+    function news_api_list_by_vue($slug=null,$query=null){
 
         $categoriesUrl = $this -> GetCategoryApiUrl();
         $postsUrl = $this -> GetPostsApiUrl();
@@ -601,8 +632,27 @@ class meleap extends Controller
             "CategoryApiUrl"=> $categoriesUrl,
             "PostsApiUrl"=> $postsUrl,
             "slug"=>$slug,
+            "search"=>$query
         ]);
 
+    }
+
+    function search($locale,$query=null,Request $request){
+        $this -> postApiSetting["per_page"] = 100;
+
+        $keyword= $request->input('query');
+        if($keyword){
+
+            return redirect()->route('search', [
+                "locale" => $locale,
+                "query" => $keyword
+            ]);
+        }
+
+        if(!$query){
+            return redirect()->route('news_api',["locale"=>$locale]);
+        }
+        return $this->news_api_list_by_vue($slug=null,$query);
     }
 
     function news_api_category($locale,$slug=null){

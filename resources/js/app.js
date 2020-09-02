@@ -52,30 +52,6 @@ let app = new Vue({
            // this.owl_slider = val;
            // this.gallery = val;
            owlscrollto(val);
-        },
-        FormSubmit(action=null,data=null){
-
-            // console.log(this.$refs.contactForm);
-            //
-            // return;
-            let _data = jQuery( ".form-active form" ).serializeArray();
-            console.log(_data);
-            return;
-            if(!action || !data){
-                console.log("fail")
-            }
-            console.log(action,data);
-            axios.post(action, {
-                firstName: 'Fred',
-                lastName: 'Flintstone'
-            })
-            .then(function (response) {
-                console.log(response);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-
         }
     }
 })

@@ -10,6 +10,14 @@
           <option name="port" value="21" />
         </fileTransfer>
       </webServer>
+      <webServer id="52992ace-1c36-4add-9f34-4a11b5ede629" name="ftp.lolipop.jp" url="http://ftp.lolipop.jp">
+        <fileTransfer host="ftp.lolipop.jp" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>

@@ -1,5 +1,5 @@
 @extends("page",[
-    'title' => 'News | MELEAP',
+    'title' => __("general.news").' | MELEAP',
     'current'=> 'news'
 ])
 

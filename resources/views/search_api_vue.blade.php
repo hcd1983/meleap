@@ -18,22 +18,18 @@ $locale = \App::getLocale();
 
     <div class="section news-list-section">
         <div  class="container-fluid">
-            <news-list class="news-list px-xl-5" search="{{$search}}" post-api="{{$PostsApiUrl}}" current-category="{{$slug}}"  category-api="{{$CategoryApiUrl}}" news-url="{{route("news_api",["locale"=>$locale])}}" category-url="{{route("news_api_category",["locale"=>$locale])}}" category-slug="{{$slug ?? ""}}">
+            <news-list class="news-list px-xl-5" post-api="{{$PostsApiUrl}}" category-api="{{$CategoryApiUrl}}" news-url="{{route("news_api",["locale"=>$locale])}}" category-url="{{route("news_api_category",["locale"=>$locale])}}" category-slug="{{$slug ?? ""}}">
 
                 <template v-slot:category="slotProps">
                     <div class="search-bar d-md-flex justify-content-md-between align-items-md-end">
 
-                        @if($search)
-                            <h2 style="color:#000">Search Result for "{{$search}}"</h2>
-                        @else
-                        <category-list :categories="slotProps.categories"  :current="slotProps.currentCategory" news-url="{{route("news_api",["locale"=>$locale])}}" category-url="{{route("news_api_category",["locale"=>$locale])}}"></category-list>
-                        @endif
+                        <category-list :categories="slotProps.categories"  current="{{$slug}}" news-url="{{route("news_api",["locale"=>$locale])}}" category-url="{{route("news_api_category",["locale"=>$locale])}}"></category-list>
 
-                        <div class="search-form poppins d-none d-lg-block">
-                            <form action="{{route("search",["locale"=>$locale])}}">
+                        <div class="search-form poppins">
+                            <form action="#">
                                 <div class="search-form-container">
-                                    <input type="text" value="{{$search ?? ""}}"  placeholder="Search" name="query" />
-                                    <button type="submit" class="icon"><i class="fa fa-search"></i></button>
+                                    <input type="text"  placeholder="Search" />
+                                    <button class="icon"><i class="fa fa-search"></i></button>
                                 </div>
                             </form>
                         </div>

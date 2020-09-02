@@ -41,6 +41,7 @@ Route::get('/{locale}/product/{slug?}', "meleap@product")->name("product");
 //Route::get('/{locale}/news/{slug}',"meleap@news_single")->name("news-single");
 
 Route::get('/{locale}/news_api/category/{slug?}',"meleap@news_api_category")->name("news_api_category");
+Route::get('/{locale}/search/{query?}',"meleap@search")->name("search");
 Route::get('/{locale}/news_api',"meleap@news_api")->name("news_api");
 Route::get('/{locale}/news_api/{id?}',"meleap@news_single_api")->name("news_single_api");
 

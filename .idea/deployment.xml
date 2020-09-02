@@ -2,6 +2,13 @@
 <project version="4">
   <component name="PublishConfigData" serverName="meleap">
     <serverData>
+      <paths name="ftp.lolipop.jp">
+        <serverdata>
+          <mappings>
+            <mapping deploy="meleap/" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="meleap">
         <serverdata>
           <mappings>

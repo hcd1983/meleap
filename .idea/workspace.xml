@@ -2,19 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6cd07553-4af4-41b2-a20b-a107b20f5c50" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/lang/en/_news.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/jp/_news.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/search_api_vue.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/meleap.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/meleap.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/vue/post_list.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/vue/post_list.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/vue/button-tab.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/vue/button-tab.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/vue/category_list.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/vue/category_list.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/vue/loading.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/vue/loading.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/vue/news-list.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/vue/news-list.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/vue/top-search-block.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/vue/top-search-block.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/_general.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_general.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/_news.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_news.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/contact.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/emails/template-1.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/template-1.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/form/business.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/form/business.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/form/events.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/form/events.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/form/media.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/form/media.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/form/play.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/form/play.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/form/player.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/form/player.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/form/press.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/form/press.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/form/test.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/form/test.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/news.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/news.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/news_api_vue.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/news_api_vue.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,20 +167,20 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/vue" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web.server" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\sites\meleap\resources\views" />
+      <recent name="D:\sites" />
+      <recent name="D:\sites\meleap\resources\lang\en" />
+      <recent name="D:\sites\meleap\resources\lang\jp" />
+      <recent name="D:\sites\meleap\resources\js\vue" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\sites\meleap\resources\lang" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\sites\meleap\resources\js\vue" />
-      <recent name="D:\sites\meleap\resources\views" />
-      <recent name="D:\sites\meleap\resources\views\form" />
-      <recent name="D:\sites\meleap\resources\views\components" />
-      <recent name="D:\sites\meleap\resources\sass" />
     </key>
   </component>
   <component name="RunManager">
@@ -208,7 +226,8 @@
       <workItem from="1597391699140" duration="75134000" />
       <workItem from="1597819610957" duration="189000" />
       <workItem from="1597822757148" duration="91956000" />
-      <workItem from="1598423475663" duration="25173000" />
+      <workItem from="1598423475663" duration="33715000" />
+      <workItem from="1598927539756" duration="25762000" />
     </task>
     <servers />
   </component>
@@ -228,19 +247,19 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="45" y="98" width="1720" height="839" key="DirDiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1596786503918" />
-    <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1597625286407">
+    <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1598840185947">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1597625286407" />
-    <state x="777" y="443" key="NewPhpFileDialog" timestamp="1598368413684">
+    <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1598840185947" />
+    <state x="777" y="443" key="NewPhpFileDialog" timestamp="1598501102167">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="777" y="443" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593656942586" />
-    <state x="777" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598368413684" />
-    <state x="461" y="162" key="SettingsEditor" timestamp="1597387809999">
+    <state x="777" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598501102167" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1598932303124">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1597387809999" />
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1598932303124" />
     <state width="544" height="446" key="SwitcherDM" timestamp="1594888597106">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -265,11 +284,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="242" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1595059698831" />
-    <state x="623" y="229" width="672" height="678" key="search.everywhere.popup" timestamp="1598432246805">
+    <state x="623" y="229" width="672" height="678" key="search.everywhere.popup" timestamp="1598519754846">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="229" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593604850221" />
-    <state x="623" y="229" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598432246805" />
+    <state x="623" y="229" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598519754846" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

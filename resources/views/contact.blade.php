@@ -74,38 +74,42 @@
                     <h3 class="text-lg-center text-left">{!! __("contact.please.fill") !!}</h3>
                 </div>
 
+                <button-tab  :tabs='{!! json_encode($tabs) !!}' locale="{{$locale}}" action="{{route("FormSubmit")}}">
 
-                <button-tab  :tabs='{!! json_encode($tabs) !!}' locale="{{$locale}}">
-
-                    <template slot="events">
+                    <template v-slot:events="slotProps" >
                         @include("form.events")
                     </template>
 
-                    <template slot="media">
+                    <template v-slot:media="slotProps">
                         @include("form.media")
                     </template>
 
-                    <template slot="play">
+                    <template v-slot:play="slotProps">
                         @include("form.play")
                     </template>
 
-                    <template slot="query">
+                    <template v-slot:query="slotProps">
                         @include("form.play")
                     </template>
 
-                    <template slot="business">
+                    <template v-slot:business="slotProps">
                         @include("form.business")
                     </template>
 
-                    <template slot="press">
+                    <template v-slot:press="slotProps">
                         @include("form.press")
                     </template>
 
-                    <template slot="player">
+                    <template v-slot:player="slotProps">
                         @include("form.player")
                     </template>
 
+                    <template v-slot="slotProps">
+                        <loading v-if="slotProps.sending" text="SENDING..."></loading>
+                    </template>
+
                 </button-tab>
+
 
 
             </div>

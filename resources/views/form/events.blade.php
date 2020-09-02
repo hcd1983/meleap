@@ -1,5 +1,4 @@
 
-<form id="contact-form" class="contact-form" @submit.prevent="FormSubmit('{{route("FormSubmit")}}')">
 
     <div class="form-group required">
         <label data-label="name">お名前</label>
@@ -136,4 +135,3 @@
         <button class="btn btn-submit" type="submit">送信內容確認 <i class="fas fa-chevron-right"></i></button>
     </div>
 
-</form>

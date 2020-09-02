@@ -1,6 +1,6 @@
 <template>
     <div>
-        <slot name="category" :categories="categories" :posts="posts" :totalPage="totalPage" :totalPost="totalPost" :categoryLoaded="categoryLoaded" :newsLoaded="newsLoaded"></slot>
+        <slot name="category" :currentCategory="currentCategory" :categories="categories" :posts="posts" :totalPage="totalPage" :totalPost="totalPost" :categoryLoaded="categoryLoaded" :newsLoaded="newsLoaded"></slot>
     </div>
 </template>
 
@@ -22,7 +22,7 @@
             this.getCategories();
             // this.getPosts();
         },
-        props:["postApi","categoryApi","newsUrl","categoryUrl","categorySlug"],
+        props:["postApi","categoryApi","newsUrl","categoryUrl","categorySlug","currentCategory","search"],
         methods:{
 
             getCategories(){
@@ -47,23 +47,31 @@
 
             },
             getPosts(){
-                let axios_opts = {};
+                let axios_opts = {
+                    params:{}
+                };
                 let self = this;
                 let categorySlug = this.categorySlug;
+                let search = this.search;
+
                 if(categorySlug){
                    let res = this.getCategoryIdbySlug(categorySlug);
 
                    if(typeof res != "undefined"){
-                       axios_opts.params = {
-                           categories : res.id
-                       }
 
+                       axios_opts.params.categories = res.id
 
                    }else{
                        self.posts = [];
                        self.newsLoaded = 1;
                        return;
                    }
+                }
+
+
+                if(search){
+                    axios_opts.params.search = search;
+                    console.log(axios_opts);
                 }
 
                 this.$axios.get(this.postApi, axios_opts)

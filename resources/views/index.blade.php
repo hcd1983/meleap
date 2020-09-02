@@ -24,7 +24,7 @@ $learn_more_text = mb_str_split($learn_more);
     <div id="video" class="d-flex align-items-center">
 {{--        <div id="yt-video" class="overlay"></div>--}}
         <div id="yt-video" class="overlay overflow-hidden">
-            <video autoplay muted loop playsinline id="myVideo">
+            <video autoplay muted loop playsinline id="myVideo" poster="{{asset("images/cover.png")}}">
                 <source src="{{asset("images/video/meleap-top-video.mp4")}}" type="video/mp4">
             </video>
         </div>

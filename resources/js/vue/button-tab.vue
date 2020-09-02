@@ -17,20 +17,37 @@
                 <span>.</span>
             </div>
         </div>
+
+        <div class="message poppins" v-if="error">
+            Something goes wrong. Please try again later.
+            <div class="mt-4"><a class="hollow-btn" href="javascript:void(0)" @click="success=null;error=null">OK</a></div>
+        </div>
+
+        <div class="success poppins" v-if="success">
+            Message have been sent.<br>
+            <div class="mt-4"><a class="hollow-btn" href="javascript:void(0)" @click="success=null;error=null">OK</a></div>
+        </div>
+
+
         <div class="form-display" :class="{'active':show}">
-            <div v-for="tab,index in tabs" v-show="current && current.slug == tab.slug" :class="{'form-active':current && current.slug == tab.slug}">
-                <slot :name="tab.slug" >
-                    {{tab.slug}}
-                </slot>
+            <div v-for="tab,index in tabs"  :class="{'form-active':current && current.slug == tab.slug}">
+                <form id="contact-form" class="contact-form" @submit.prevent="FormSubmit" v-if="!sending && !error && !success">
+                    <slot :name="tab.slug" v-if="current && current.slug == tab.slug" :sending="sending">
+                        {{tab.slug}}
+                    </slot>
+                </form>
+
             </div>
+            <loading text="SENDING..." v-if="sending"></loading>
         </div>
     </div>
 </template>
 
 <script>
-
+    import loading from "./loading";
     export default {
         name: "button-tab",
+        components:{loading},
         data:function(){
             let data = {};
             let locale = this.locale;
@@ -38,12 +55,11 @@
             data.current = null;
 
             data.show = false;
+            data.sending = false;
+            data.error = null;
+            data.success = null;
 
-            data.FormData = {
-                place:[],
-                budget:'特に決まってない・不明',
-                whereknow:[]
-            }
+
 
             return data;
         },
@@ -61,6 +77,10 @@
             locale:{
                 type:String,
                 default:"jp"
+            },
+            action:{
+                type:String,
+                default:null
             }
         },
         methods:{
@@ -69,10 +89,78 @@
                 let self =this;
                 this.show = false;
                 this.current = tab;
-                this.FormData.action = tab.slug;
+                // this.FormData.action = tab.slug;
                 setTimeout(function () {
                     self.show = true;
                 },1800)
+            },
+            FormSubmit(){
+                this.success = null;
+                this.error = null;
+                let action =this.action;
+                // console.log(this.$refs.contactForm);
+                //
+                // return;
+                let self = this;
+                let _data = {};
+
+                _data.title = jQuery( ".tabs .active" ).text();
+                _data.data = jQuery( ".form-active form" ).serializeArray();
+                _data.pass = [];
+                jQuery(".form-active label").each(function(){
+
+                    let key = $(this).data("label");
+                    if(typeof key == "undefined"){
+                        return;
+                    }
+
+                    let label = $(this).text();
+                    let param = _data.data.filter( item => item.name == key );
+                    _data.pass.push(
+                        {
+                            key: key,
+                            label: label,
+                            param:param
+                        }
+                    )
+
+                    if(key == "email"){
+                        _data.email = param[0].value;
+                    }
+
+                    if(key == "name"){
+                        _data.name = param[0].value;
+                    }
+
+                    if(key == "company"){
+                        _data.company = param[0].value;
+                    }
+
+
+
+                });
+
+                if(!action){
+                    console.log("fail")
+                }
+                // jQuery("form").hide();
+                self.sending = true;
+
+                axios.post(action,_data)
+                    .then(function (response) {
+
+                        self.success = true;
+                        // jQuery("form").show();
+                    })
+                    .catch(function (error) {
+                        // console.log(error);
+                        self.error = error;
+
+                    }).then(function () {
+                    self.sending = false;
+
+                });
+
             }
         }
     }
@@ -95,6 +183,17 @@
         100%{
             color: #FFF;
         }
+    }
+
+    .message,.success {
+        text-align: center;
+        font-size: 22px;
+        /* color: red; */
+        margin: 20px 0;
+    }
+
+    .success{
+        color:#FFF;
     }
 
     .tabs{
