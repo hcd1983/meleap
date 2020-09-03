@@ -214,6 +214,10 @@ class meleap extends Controller
         foreach ($products as $key => $product){
             extract($product);
             extract($acf);
+
+            $main_pic_mobile = isset($main_pic_mobile) &&  $main_pic_mobile? $main_pic_mobile : $main_pic;
+            $main_pic_mobile_en = isset($main_pic_mobile_en) &&  $main_pic_mobile_en ? $main_pic_mobile_en : $main_pic_mobile;
+
             $_products_JP[$slug] = [
                 "slug"=>$slug,
                 "title"=>$title["rendered"],
@@ -222,6 +226,7 @@ class meleap extends Controller
                 "cover"=>$cover,
                 "thumbnail"=>$thumbnail,
                 "main_pic"=>$main_pic,
+                "main_pic_mobile"=>$main_pic_mobile,
                 "video_title"=>isset($video_title)? $video_title : "",
                 "video_description"=>isset($video_description)? $video_description : "",
                 "youtube_id"=>$youtube_id,
@@ -237,6 +242,7 @@ class meleap extends Controller
                 "cover"=>$cover,
                 "thumbnail"=>$thumbnail,
                 "main_pic"=>$main_pic_en ? $main_pic_en : $main_pic,
+                "main_pic_mobile"=>$main_pic_mobile_en,
                 "video_title"=>isset($video_title_en)? $video_title_en : "",
                 "video_description"=>isset($video_description_en)? $video_description_en : "",
                 "youtube_id"=>$youtube_id_en,

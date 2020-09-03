@@ -46,7 +46,8 @@
     @endif
 
     <div>
-        <img src="{{$main_pic}}" class="w-100">
+        <img src="{{$main_pic}}" class="w-100 d-none d-md-block">
+        <img src="{{$main_pic_mobile}}" class="w-100 d-md-none">
     </div>
 @if(count($gallery) > 0)
     <div class="hado-gallery pink-linear-bg-reverse">
