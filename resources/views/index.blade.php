@@ -492,19 +492,23 @@ $learn_more_text = mb_str_split($learn_more);
 
     <script src="//cdn.jsdelivr.net/npm/jquery.marquee@1.5.0/jquery.marquee.min.js" type="text/javascript"></script>
 {{--    <script src="{{URL::asset('src/jQuery.YoutubeBackground.js')}}"></script>--}}
+
     <script>
-    {{--$('#yt-video').YTPlayer({--}}
-    {{--    fitToBackground: true,--}}
-    {{--    videoId: "{{ $VideoId }}"--}}
-    {{--});--}}
-    </script>
-    <script>
+        // let mqrqueeSpeed = Math.floor($(window).width() / 1920 * 100);
+
+        let mqrqueeSpeed = 100;
+        if($(window).width() < 991 ){
+            mqrqueeSpeed = 30;
+        }
+
+
+
         $(".marquee").marquee({
             gap:20,
             duplicated:true,
-            speed: 100,  // 初始下拉速度   ,
+            speed: mqrqueeSpeed,
             scrollSpeed: 9999,  // 滾動速度   ,
-            pauseSpeed: 500,  // 滾動完到下一條的間隔時間   ,
+            pauseSpeed: 300,  // 滾動完到下一條的間隔時間   ,
             // pauseOnHover: true, // 滑鼠滑向文字時是否停止滾動   ,
             loop: -1 ,    // 設定迴圈滾動次數 （-1為無限迴圈）   ,
             fxEasingShow: "swing" , // 緩衝效果   ,

@@ -202,6 +202,7 @@ if(isset($page_setting["acf"])){
     })
 
     $(window).on("load", function (e) {
+        $("body").addClass("is-load");
 
         if(use_mobile_style() == true){
             return;
@@ -210,7 +211,7 @@ if(isset($page_setting["acf"])){
         $("#nav-bottom-bar").css("opacity","1");
         $(window).scroll();
 
-        $("body").addClass("is-load");
+
 
 
         // $("body").niceScroll();

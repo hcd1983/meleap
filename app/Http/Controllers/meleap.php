@@ -106,6 +106,7 @@ class meleap extends Controller
     function FormSubmit(Request $request){
         $data = $request->all();
         $status = $this ->  SendContactMail($data);
+
         return $status;
 //        return view('emails.template-1',$data);
 
@@ -127,13 +128,17 @@ class meleap extends Controller
 //        $to = "Dean Huang <hcd@mojopot.com>,hcd@hcd-design-studio.com";
         $subject = $data["title"]." - ";
         $subject .= isset($data["company"])? $data["company"] :$data["name"];
+
+        $subject = mb_encode_mimeheader($subject, 'UTF-8');
+
         $message = view('emails.template-1',$data);
         $headers = [];
         $headers[] = 'From: ' . $from ;
         $headers[] =  'Reply-To: ' . $data["email"] ;
         $headers[] =  'X-Mailer: PHP/' . phpversion();
         $headers[] = 'MIME-Version: 1.0';
-        $headers[] = 'Content-type: text/html; charset=iso-8859-1';
+//        $headers[] = 'Content-type: text/html; charset=iso-8859-1';
+        $headers[] = 'Content-type: text/html; charset=utf-8';
 
         $status = mail($to,$subject,$message,implode("\r\n", $headers));
         return $status;
@@ -141,18 +146,24 @@ class meleap extends Controller
 
     function MailTest(){
 
-        $to = "Dean Huang <hcd@mojopot.com>,hcd@hcd-design-studio.com";
-        $subject = "TEST here";
-        $message = view('emails.template-1');
-        $headers = 'From: ' . "IT-MONK <noreply@it-monk.com>" . "\r\n" .
-            'Reply-To: ' . "hcd@mojopot.com" . "\r\n" .
-            'X-Mailer: PHP/' . phpversion();
-        $status = mail($to,$subject,$message,$headers);
-//        $status = Mail::send('emails.template-1', [], function ($message) {
-//            $message->from('system@it-monk.com', 'some-test');
-//            $message->to('hcd@mojopot.com');
-////            $message->cc('bar@example.com', $name = null);
-//        });
+        $to = $this -> PageSettingsStatic["acf"]["send_mail_to"];
+        $subject = mb_encode_mimeheader("中文", 'UTF-8');
+        $message = "中文";
+//        $headers = 'From: ' . "IT-MONK <noreply@it-monk.com>" . "\r\n" .
+//            'Reply-To: ' . "hcd@mojopot.com" . "\r\n" .
+//            'X-Mailer: PHP/' . phpversion();
+//        $status = mail($to,$subject,$message,$headers);
+
+        $headers[] = 'From: ' . "IT-MONK <noreply@it-monk.com>";
+        $headers[] =  'Reply-To: ' . "hcd@mojopot.com";
+        $headers[] =  'X-Mailer: PHP/' . phpversion();
+        $headers[] = 'MIME-Version: 1.0';
+//        $headers[] = 'Content-type: text/html; charset=iso-8859-1';
+        $headers[] = 'Content-type: text/html; charset=utf-8';
+
+        $status = mail($to,$subject,$message,implode("\r\n", $headers));
+
+
 
         dd($status);
         return "mailtest";

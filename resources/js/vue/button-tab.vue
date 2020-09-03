@@ -137,7 +137,6 @@
                     }
 
 
-
                 });
 
                 if(!action){
@@ -153,7 +152,7 @@
                         // jQuery("form").show();
                     })
                     .catch(function (error) {
-                        // console.log(error);
+                        console.log(error);
                         self.error = error;
 
                     }).then(function () {
@@ -349,6 +348,8 @@
                 font-size: 12px;
                 margin-right: 0;
                 color:#FFF;
+                vertical-align: top;
+                margin-right: 5px;
                 &.active{
                     color:#FFF;
                 }
@@ -404,6 +405,15 @@
             }
         }
 
+    }
+
+    @media (max-width: 767.98px){
+        .tabs{
+
+            .btn{
+                display: block;
+            }
+        }
     }
 
 

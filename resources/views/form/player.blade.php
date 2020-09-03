@@ -1,15 +1,15 @@
 
 
     <div class="form-group required">
-        <label data-lable="name">Name</label>
+        <label data-label="name">Name</label>
         <input type="text" class="form-control" name="name" required>
     </div>
     <div class="form-group required">
-        <label data-lable="email">Email Address</label>
+        <label data-label="email">Email Address</label>
         <input type="email" class="form-control" name="email" required>
     </div>
     <div class="form-group required">
-        <label data-lable="message">Content of inquiry</label>
+        <label data-label="message">Content of inquiry</label>
         <textarea class="form-control" name="message" required></textarea>
     </div>
     <div>

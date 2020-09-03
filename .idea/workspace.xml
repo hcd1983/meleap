@@ -4,7 +4,12 @@
     <list default="true" id="6cd07553-4af4-41b2-a20b-a107b20f5c50" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/meleap.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/meleap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/social-media-list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/social-media-list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/vue/button-tab.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/vue/button-tab.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/form/player.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/form/player.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/form/press.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/form/press.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,7 +205,7 @@
       <workItem from="1597822757148" duration="91956000" />
       <workItem from="1598423475663" duration="33715000" />
       <workItem from="1598927539756" duration="33446000" />
-      <workItem from="1599100223202" duration="3781000" />
+      <workItem from="1599100223202" duration="10134000" />
     </task>
     <servers />
   </component>
