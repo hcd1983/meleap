@@ -83,16 +83,15 @@ class meleap extends Controller
             "jp"=> route( $route_name, $params_with_locale_jp)
         ];
 
-        $social_media = [
-            "facebook"=>"https://www.facebook.com/HADOinfo/",
-            "youtube"=>"https://www.youtube.com/channel/UC2alHTyXjiwe_aRFWq3N-Hw",
-            "twitter"=> "https://twitter.com/hado_info"
-        ];
-
-
 
         $this->products = $this->ProductsGetter();
         $PageSettingsStatic = $this->PageSettings();
+
+        $social_media = [
+            "facebook"=> $PageSettingsStatic["acf"]["social_media_facebook"],
+            "youtube"=> $PageSettingsStatic["acf"]["social_media_youtube"],
+            "twitter"=> $PageSettingsStatic["acf"]["social_media_twitter"],
+        ];
 
 
 

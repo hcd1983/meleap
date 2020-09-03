@@ -4,7 +4,7 @@
     <list default="true" id="6cd07553-4af4-41b2-a20b-a107b20f5c50" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/meleap.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/meleap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/ProductSingle.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/ProductSingle.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/social-media-list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/social-media-list.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +139,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web.server" />
   </component>
@@ -199,7 +199,8 @@
       <workItem from="1597819610957" duration="189000" />
       <workItem from="1597822757148" duration="91956000" />
       <workItem from="1598423475663" duration="33715000" />
-      <workItem from="1598927539756" duration="32782000" />
+      <workItem from="1598927539756" duration="33446000" />
+      <workItem from="1599100223202" duration="3781000" />
     </task>
     <servers />
   </component>
@@ -219,10 +220,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="45" y="98" width="1720" height="839" key="DirDiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1596786503918" />
-    <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1598840185947">
+    <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1599094859672">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1598840185947" />
+    <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1599094859672" />
     <state x="777" y="443" key="NewPhpFileDialog" timestamp="1598501102167">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -261,31 +262,5 @@
     </state>
     <state x="623" y="229" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593604850221" />
     <state x="623" y="229" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598519754846" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/company.blade.php</url>
-          <line>3</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/ProductSingle.blade.php</url>
-          <line>148</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/components/pagination.blade.php</url>
-          <line>47</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/news_api_single.blade.php</url>
-          <line>7</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
