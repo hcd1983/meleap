@@ -4,15 +4,6 @@
     <list default="true" id="6cd07553-4af4-41b2-a20b-a107b20f5c50" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/meleap.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/meleap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/vue/button-tab.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/vue/button-tab.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/form/business.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/form/business.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/form/events.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/form/events.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/form/media.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/form/media.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/form/play.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/form/play.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/form/player.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/form/player.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/form/press.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/form/press.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/form/test.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/form/test.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
