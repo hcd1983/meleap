@@ -15,7 +15,7 @@ class Localization
      * @return mixed
      */
     protected $except = [
-      "mobile","clear-cache","MailTest","recache-all","FormSubmit"
+      "mobile","clear-cache","MailTest","recache-all","FormSubmit","contact2","contact-en"
     ];
     public function handle($request, Closure $next)
     {
