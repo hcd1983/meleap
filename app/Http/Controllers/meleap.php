@@ -151,30 +151,6 @@ class meleap extends Controller
         return $status;
     }
 
-    function MailTest(){
-
-        $to = $this -> PageSettingsStatic["acf"]["send_mail_to"];
-        $subject = mb_encode_mimeheader("中文", 'UTF-8');
-        $message = "中文";
-//        $headers = 'From: ' . "IT-MONK <noreply@it-monk.com>" . "\r\n" .
-//            'Reply-To: ' . "hcd@mojopot.com" . "\r\n" .
-//            'X-Mailer: PHP/' . phpversion();
-//        $status = mail($to,$subject,$message,$headers);
-
-        $headers[] = 'From: ' . "IT-MONK <noreply@it-monk.com>";
-        $headers[] =  'Reply-To: ' . "hcd@mojopot.com";
-        $headers[] =  'X-Mailer: PHP/' . phpversion();
-        $headers[] = 'MIME-Version: 1.0';
-//        $headers[] = 'Content-type: text/html; charset=iso-8859-1';
-        $headers[] = 'Content-type: text/html; charset=utf-8';
-
-        $status = mail($to,$subject,$message,implode("\r\n", $headers));
-
-
-
-        dd($status);
-        return "mailtest";
-    }
 
     function recache(){
 
@@ -794,7 +770,4 @@ class meleap extends Controller
 
 
 
-    function test(){
-        return view("test");
-    }
 }
