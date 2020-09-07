@@ -4,21 +4,6 @@
     <list default="true" id="6cd07553-4af4-41b2-a20b-a107b20f5c50" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/meleap.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/meleap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/canvas.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/_member-list.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/footer.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/google-map.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/marquee.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/pagination.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/form/test.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/joinus.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/mobile.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/news.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/news_api.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/news_single.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/search_api_vue.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/test.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -268,10 +253,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="781" y="413" key="publish.login/0.0.1920.1040@0.0.1920.1040" timestamp="1597028849829" />
-    <state x="616" y="242" key="run.anything.popup" timestamp="1595059698831">
+    <state x="616" y="242" key="run.anything.popup" timestamp="1599465777331">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="242" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1595059698831" />
+    <state x="616" y="242" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599465777331" />
     <state x="623" y="229" width="672" height="678" key="search.everywhere.popup" timestamp="1599190440241">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -1,6 +1,6 @@
 <?php
 namespace App\Http\Controllers;
-define( "EnApi" , "http://api.meleap.com");
+define( "EnApi" , "https://api.meleap.com");
 
 use Illuminate\Http\Request;
 use Cache;
