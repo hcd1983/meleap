@@ -1,6 +1,6 @@
 <?php
-
 namespace App\Http\Controllers;
+define( "EnApi" , "http://api.meleap.com");
 
 use Illuminate\Http\Request;
 use Cache;
@@ -14,13 +14,14 @@ class meleap extends Controller
     public $currentpage = 1;
     public $totalPage = false;
     public $totalPosts = false;
-    public $default_avatar = "https://apimeleap.it-monk.com/wp-content/uploads/2020/08/下載-1.jpg";
-    public $IndexPageApi = "https://apimeleap.it-monk.com/wp-json/wp/v2/pages/107";
-    public $SettingsApi = "https://apimeleap.it-monk.com/wp-json/wp/v2/pages?slug=settings&per_page=1";
-    public $CategoryApi = "https://apimeleap.it-monk.com/wp-json/wp/v2/categories/?hide_empty=true";
+    public $default_avatar = "http://api.meleap.com/wp-content/uploads/2020/09/%E4%B8%8B%E8%BC%89-1.jpg";
+    public $IndexPageApi = EnApi."/wp-json/wp/v2/pages/107";
+    public $SettingsApi = EnApi."/wp-json/wp/v2/pages?slug=settings&per_page=1";
+    public $CategoryApi = EnApi."/wp-json/wp/v2/categories/?hide_empty=true";
+    public $MembersApi = EnApi."/wp-json/wp/v2/team_member";
 //    public $CategoryApi = "https://hado-official.com/en/wp-json/wp/v2/categories";
-    public $PostApi = "https://apimeleap.it-monk.com/wp-json/wp/v2/posts/";
-    public $ProductsApi = "https://apimeleap.it-monk.com/wp-json/wp/v2/product";
+    public $PostApi = EnApi."/wp-json/wp/v2/posts/";
+    public $ProductsApi = EnApi."/wp-json/wp/v2/product";
     public $PostApi_en = "https://hado-official.com/en/wp-json/wp/v2/posts/";
     public $CategoryApi_en = "https://hado-official.com/en/wp-json/wp/v2/categories/?hide_empty=true";
     public $PageSettingsStatic = false;
@@ -546,7 +547,8 @@ class meleap extends Controller
 
         $value = Cache::rememberForever('members', function() {
 
-            $endpoint = "https://apimeleap.it-monk.com/wp-json/wp/v2/team_member";
+//            $endpoint = "https://apimeleap.it-monk.com/wp-json/wp/v2/team_member";
+            $endpoint = $this->MembersApi;
             $client = new \GuzzleHttp\Client();
 
             $response = $client->request('GET', $endpoint, [
