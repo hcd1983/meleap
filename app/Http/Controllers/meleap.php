@@ -14,7 +14,7 @@ class meleap extends Controller
     public $currentpage = 1;
     public $totalPage = false;
     public $totalPosts = false;
-    public $default_avatar = "http://api.meleap.com/wp-content/uploads/2020/09/%E4%B8%8B%E8%BC%89-1.jpg";
+    public $default_avatar = "https://api.meleap.com/wp-content/uploads/2020/09/%E4%B8%8B%E8%BC%89-1.jpg";
     public $IndexPageApi = EnApi."/wp-json/wp/v2/pages/107";
     public $SettingsApi = EnApi."/wp-json/wp/v2/pages?slug=settings&per_page=1";
     public $CategoryApi = EnApi."/wp-json/wp/v2/categories/?hide_empty=true";
