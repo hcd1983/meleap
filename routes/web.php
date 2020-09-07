@@ -12,6 +12,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/contact2',function(){
+  return redirect()->route("contact",["locale"=>"jp"]);
+});
+
+Route::get('/contact-en',function(){
+    return redirect()->route("contact",["locale"=>"en"]);
+});
 
 Route::get('/MailTest','meleap@MailTest')->name('mailtest');
 Route::post('/FormSubmit','meleap@FormSubmit')->name('FormSubmit');
