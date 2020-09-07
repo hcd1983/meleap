@@ -137,7 +137,7 @@ if(isset($page_setting["acf"])){
 <script src="{{URL::asset('js/app.js?ver=').time()}}"></script>
 {{--<script src="{{URL::asset('js/jquery.nicescroll.min.js')}}"></script>--}}
 
-<link rel="stylesheet" href="https://apimeleap.it-monk.com/wp-includes/css/dist/block-library/style.min.css?ver=5.4.2"></link>
+<link rel="stylesheet" href="{{JpApi}}/wp-includes/css/dist/block-library/style.min.css?ver=5.4.2"></link>
 <script>
     $(".scroll-to").click(function(e) {
         e.preventDefault();
