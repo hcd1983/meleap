@@ -120,7 +120,13 @@ class meleap extends Controller
 
         $from = $this -> PageSettingsStatic["acf"]["send_mail_from"];
         $fromName = $this -> PageSettingsStatic["acf"]["send_mail_from_name"];
-        $to = $this -> PageSettingsStatic["acf"]["send_mail_to"].",".$data["email"];
+        if($data["locale"] == "jp"){
+            $to = $this -> PageSettingsStatic["acf"]["send_mail_to"].",".$data["email"];
+        }else{
+            $to = $this -> PageSettingsStatic["acf"]["send_mail_to_en"].",".$data["email"];
+        }
+
+
 
         if($fromName){
             $from = $fromName."<".$from.">";

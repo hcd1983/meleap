@@ -12,6 +12,10 @@
         <label data-label="message">Content of inquiry</label>
         <textarea class="form-control" name="message" required></textarea>
     </div>
+    <div class="hidden">
+        <label data-label="locale">locale</label>
+        <input type="hidden" name="locale" value="en">
+    </div>
     <div>
         <button class="btn btn-submit" type="submit">SUBMIT<i class="fas fa-chevron-right"></i></button>
     </div>

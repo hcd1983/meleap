@@ -25,6 +25,11 @@
         <li>土日、祝日前後、年末年始ほか、弊社休業日に頂いたご連絡については、翌営業日以降の回答となりますのでご了承下さい。</li>
     </ul>
 
+    <div class="hidden">
+        <label data-label="locale">locale</label>
+        <input type="hidden" name="locale" value="jp">
+    </div>
+
     <div>
         <button class="btn btn-submit" type="submit">送信內容確認 <i class="fas fa-chevron-right"></i></button>
     </div>

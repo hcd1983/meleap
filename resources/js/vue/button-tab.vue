@@ -136,6 +136,10 @@
                         _data.company = param[0].value;
                     }
 
+                    if(key == "locale"){
+                        _data.locale = param[0].value;
+                    }
+
 
                 });
 
@@ -183,6 +187,8 @@
             color: #FFF;
         }
     }
+
+
 
     .message,.success {
         text-align: center;
@@ -234,6 +240,10 @@
             > div{
                 opacity: 1;
             }
+        }
+
+        .hidden{
+            display: none;
         }
     }
     .loading{
@@ -309,6 +319,7 @@
                 color:#FFF;
             }
         }
+
         .btn.btn-submit{
             color: #FFF;
             background: linear-gradient(90deg,#faed00 0%,#cb6e9f 100%);

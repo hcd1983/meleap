@@ -114,6 +114,10 @@
         <input type="text" class="form-control" name="information" required>
     </div>
 
+    <div class="hidden">
+        <label data-label="locale">locale</label>
+        <input type="hidden" name="locale" value="en">
+    </div>
     <div>
         <button class="btn btn-submit" type="submit">SUBMIT<i class="fas fa-chevron-right"></i></button>
     </div>
