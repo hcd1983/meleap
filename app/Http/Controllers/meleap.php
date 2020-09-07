@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers;
-define( "EnApi" , "https://api.meleap.com");
-
+define( "JpApi" , "https://api.meleap.com");
+define( "EnApi" , "https://hado-official.com/en");
 use Illuminate\Http\Request;
 use Cache;
 use App\Mail\ContactMail;
@@ -15,15 +15,15 @@ class meleap extends Controller
     public $totalPage = false;
     public $totalPosts = false;
     public $default_avatar = "https://api.meleap.com/wp-content/uploads/2020/09/%E4%B8%8B%E8%BC%89-1.jpg";
-    public $IndexPageApi = EnApi."/wp-json/wp/v2/pages/107";
-    public $SettingsApi = EnApi."/wp-json/wp/v2/pages?slug=settings&per_page=1";
-    public $CategoryApi = EnApi."/wp-json/wp/v2/categories/?hide_empty=true";
-    public $MembersApi = EnApi."/wp-json/wp/v2/team_member";
+    public $IndexPageApi = JpApi."/wp-json/wp/v2/pages/107";
+    public $SettingsApi = JpApi."/wp-json/wp/v2/pages?slug=settings&per_page=1";
+    public $CategoryApi = JpApi."/wp-json/wp/v2/categories/?hide_empty=true";
+    public $MembersApi = JpApi."/wp-json/wp/v2/team_member";
 //    public $CategoryApi = "https://hado-official.com/en/wp-json/wp/v2/categories";
-    public $PostApi = EnApi."/wp-json/wp/v2/posts/";
-    public $ProductsApi = EnApi."/wp-json/wp/v2/product";
-    public $PostApi_en = "https://hado-official.com/en/wp-json/wp/v2/posts/";
-    public $CategoryApi_en = "https://hado-official.com/en/wp-json/wp/v2/categories/?hide_empty=true";
+    public $PostApi = JpApi."/wp-json/wp/v2/posts/";
+    public $ProductsApi = JpApi."/wp-json/wp/v2/product";
+    public $PostApi_en = EnApi."/wp-json/wp/v2/posts/";
+    public $CategoryApi_en = EnApi."/wp-json/wp/v2/categories/?hide_empty=true";
     public $PageSettingsStatic = false;
     public $postApiSetting = [
         "per_page" => 6,
