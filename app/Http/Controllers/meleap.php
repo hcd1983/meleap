@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Cache;
 use App\Mail\ContactMail;
 use Illuminate\Support\Facades\Mail;
-
+use Sheets;
 class meleap extends Controller
 {
     public $default = [];
@@ -106,6 +106,10 @@ class meleap extends Controller
 
     function FormSubmit(Request $request){
         $data = $request->all();
+        $this-> AppendGoogleSheet($data);
+
+        return true;
+        $data = $request->all();
         $status = $this ->  SendContactMail($data);
 
         return $status;
@@ -113,6 +117,54 @@ class meleap extends Controller
 
 //        return  $request->input('title');
 //        return json_encode(["status"=>"success"]);
+    }
+
+    function AppendGoogleSheet($data){
+        $pass = $data["pass"];
+        $spreadsheet_id = '1wObGSEuXAgrUFth7rImuQ9aLbxYS_dbuR2GVs9ZA-k0';
+        $PostSheet = 'demo2';
+        $PostSheet = $data["title"];
+//        列出所有 sheet;
+        $all_sheets = Sheets::getService()->spreadsheets->get($spreadsheet_id)->sheets;
+        $sheet_titles = [];
+        foreach ($all_sheets as $key => $single){
+            $sheet_titles[] = $single->properties->title;
+        }
+//偵伺表單是否存在 ，不在的話新增一個
+        if(!in_array($PostSheet,$sheet_titles)){
+            Sheets::spreadsheet($spreadsheet_id)->addSheet($PostSheet);
+        }
+      
+
+
+//取得第一行的資料
+        $sheets = Sheets::spreadsheet($spreadsheet_id)
+        ->sheet($PostSheet.'!1:1')
+        ->get()
+        ->toArray();
+
+        $labels = [];
+        $insert = [];
+
+        foreach($pass as $key => $item){
+            if($item["label"] == "locale") continue;
+            $labels[] = $item["label"];
+            $insert[$item["label"]] = "";
+            foreach($item["param"] as $_key => $param){
+                if($_key > 0){
+                    $insert[$item["label"]].=", ";
+                }
+                $insert[$item["label"]].= $param["value"];
+            }
+        }
+//如果第一行沒資料，填入標題
+        if(count($sheets) == 0){
+            Sheets::sheet($PostSheet)->append([$labels]);
+        }
+
+//  填入欄位資料
+        Sheets::sheet($PostSheet)->append([$insert]);
+        dd($sheets);
     }
 
     function SendContactMail($data){
