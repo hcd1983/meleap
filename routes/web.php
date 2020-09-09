@@ -32,7 +32,7 @@ Route::get('/clear-cache', function() {
 });
 
 Route::get('/recache-all', 'meleap@recache')->name('recache');
-
+Route::get('/gsheet', 'gsheet@sheet')->name('gsheet');
 
 
 Route::get('/test',"meleap@test")->name("test");
