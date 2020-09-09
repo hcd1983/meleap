@@ -108,10 +108,9 @@ class meleap extends Controller
         $data = $request->all();
         $this-> AppendGoogleSheet($data);
 
-        return true;
+//        return true;
         $data = $request->all();
         $status = $this ->  SendContactMail($data);
-
         return $status;
 //        return view('emails.template-1',$data);
 
@@ -134,7 +133,7 @@ class meleap extends Controller
         if(!in_array($PostSheet,$sheet_titles)){
             Sheets::spreadsheet($spreadsheet_id)->addSheet($PostSheet);
         }
-      
+
 
 
 //取得第一行的資料
@@ -164,7 +163,7 @@ class meleap extends Controller
 
 //  填入欄位資料
         Sheets::sheet($PostSheet)->append([$insert]);
-        dd($sheets);
+
     }
 
     function SendContactMail($data){
