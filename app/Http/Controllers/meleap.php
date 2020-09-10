@@ -120,7 +120,12 @@ class meleap extends Controller
 
     function AppendGoogleSheet($data){
         $pass = $data["pass"];
-        $spreadsheet_id = '1wObGSEuXAgrUFth7rImuQ9aLbxYS_dbuR2GVs9ZA-k0';
+        if($data["locale"] == "jp"){
+            $spreadsheet_id = '1wObGSEuXAgrUFth7rImuQ9aLbxYS_dbuR2GVs9ZA-k0';
+        }else{
+            $spreadsheet_id = '1-yjQRS98l4bsa54rgqka_HkiOmJWS_7tcG7Ja1eKWeo';
+        }
+
         $PostSheet = 'demo2';
         $PostSheet = $data["title"];
 //        列出所有 sheet;
