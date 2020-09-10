@@ -108,7 +108,7 @@ class meleap extends Controller
         $data = $request->all();
         $this-> AppendGoogleSheet($data);
 
-//        return true;
+        return true;
         $data = $request->all();
         $status = $this ->  SendContactMail($data);
         return $status;
@@ -142,6 +142,7 @@ class meleap extends Controller
         ->get()
         ->toArray();
 
+
         $labels = [];
         $insert = [];
 
@@ -158,7 +159,14 @@ class meleap extends Controller
         }
 //如果第一行沒資料，填入標題
         if(count($sheets) == 0){
-            Sheets::sheet($PostSheet)->append([$labels]);
+//            var_dump("no data");exit;
+//            Sheets::sheet($PostSheet)->append([$labels]);
+            Sheets::sheet($PostSheet)->range('A1')->update([$labels]);
+        }else{
+//            var_dump($sheets);exit;
+            $firstRow = $sheets[0];
+            $newRow = array_values (array_unique(array_merge($firstRow,$labels)));
+            Sheets::sheet($PostSheet)->range('A1')->update([$newRow]);
         }
 
 //  填入欄位資料

@@ -12,11 +12,17 @@ class gsheet extends Controller
     //
     function sheet(){
         $spreadsheet_id = '1wObGSEuXAgrUFth7rImuQ9aLbxYS_dbuR2GVs9ZA-k0';
-        $PostSheet = 'demo2';
+        $PostSheet = 'プレス・メディアの方はこちら';
         $sheets = Sheets::spreadsheet($spreadsheet_id)
             ->sheet($PostSheet.'!1:1')
             ->get()
             ->toArray();
+        $firstRow = $sheets[0];
+        $labels = ["お名前","tester"];
+        $newRow = array_values (array_unique(array_merge($firstRow,$labels)));
+
+        Sheets::sheet($PostSheet)->range('A1')->update([$newRow]);
+
         dd($sheets);
         $sheets = Sheets::spreadsheet('1wObGSEuXAgrUFth7rImuQ9aLbxYS_dbuR2GVs9ZA-k0')
 
