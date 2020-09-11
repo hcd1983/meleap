@@ -1,6 +1,6 @@
 @if(count($members) > 0)
 <div class="text-center text-sm-left">
-    <h2 class="ml-lg-3 ml-lg-0 {{ $class }} rellax" data-rellax-speed="1">{{$title}}</h2>
+    <h2 class="ml-lg-3 ml-lg-0 {{ $class }} rellax poppins" data-rellax-speed="1">{{$title}}</h2>
 </div>
 <div class="row">
     <div class="col-lg-10 col-sm-9 col-12">
