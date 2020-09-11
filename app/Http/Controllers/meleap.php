@@ -121,10 +121,20 @@ class meleap extends Controller
     function AppendGoogleSheet($data){
         $pass = $data["pass"];
         if($data["locale"] == "jp"){
-            $spreadsheet_id = '1wObGSEuXAgrUFth7rImuQ9aLbxYS_dbuR2GVs9ZA-k0';
+            $spreadsheet_id = env('CONTACT_FORM_JP', '');
         }else{
-            $spreadsheet_id = '1-yjQRS98l4bsa54rgqka_HkiOmJWS_7tcG7Ja1eKWeo';
+            $spreadsheet_id = env('CONTACT_FORM_EN', '');
         }
+
+        if(!$spreadsheet_id){
+            return;
+        }
+
+        $tz = 'asia/tokyo';
+        $timestamp = time();
+        $dt = new \DateTime("now", new \DateTimeZone($tz)); //first argument "must" be a string
+        $dt->setTimestamp($timestamp); //adjust the object to correct timestamp
+        $time_tokyo = $dt->format('d.m.Y, H:i:s');
 
         $PostSheet = 'demo2';
         $PostSheet = $data["title"];
@@ -150,7 +160,12 @@ class meleap extends Controller
 
         $labels = [];
         $insert = [];
-
+        $pass[] = [
+            "label"=>"Submit Time",
+            "param"=>[
+                ["value"=>$time_tokyo]
+            ]
+        ];
         foreach($pass as $key => $item){
             if($item["label"] == "locale") continue;
             $labels[] = $item["label"];
