@@ -201,7 +201,7 @@
             }
             .data{
 
-                padding:5px 10px;
+                padding:8px 10px 15px;
 
                 .title:before{
                     content: "";
@@ -214,6 +214,14 @@
                     font-size: 30px;
                     margin-top: -25px;
                     text-shadow: 0 0 10px #333;
+
+                    small{
+                        font-weight: bold;
+                        font-size: 90%;
+                        &.smaller{
+                            font-size: 80%;
+                        }
+                    }
                 }
                 div{
                     font-size: 13px;

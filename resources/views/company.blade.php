@@ -12,6 +12,8 @@
         "content"=>__("about.version_des"),
     ];
 
+    $locale = \App::getLocale();
+
 @endphp
 
 @section("head")
