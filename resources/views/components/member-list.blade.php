@@ -10,7 +10,7 @@
                     @php
                         $_class =  $class;
                     @endphp
-                    <div class="col-6 col-xl-3 mb-3 mb-sm-5 mt-sm-3 member-container">
+                    <div class="col-6 col-xl-4 col-xxl-3 mb-3 mb-sm-5 mt-sm-3 member-container">
                         @component("components/member",[
                             "photo"=>$member["avatar"],
                             "class"=>$_class,

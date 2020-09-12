@@ -114,7 +114,7 @@
     @component("components.google-map-style2",["map"=>$map])
     @endcomponent
 
-    <div id="team_members" class="section">
+    <div id="team_members" class="section" data-lang="{{$locale}}">
         <grid-bg class="overlay rellax" :pattern-width="150" :pattern-height="131" :global-alpha=".2" shadow-color="#FFF" style="background-position: -80px -70px" data-rellax-speed="-3"></grid-bg>
         <div class="section_title_svg rellax" data-rellax-speed=".5">
             <img src="{{ URL::asset('images/team-member.svg') }}">
@@ -122,7 +122,7 @@
         <h1 class="hollow-title d-lg-none">
             TEAM MEMBERS
         </h1>
-        <div class="row member-list" >
+        <div class="row member-list">
             <div class="col-lg-11 offset-lg-1">
                 @if(isset($departments["management"][$locale]))
                     @component("components/member-list",[
