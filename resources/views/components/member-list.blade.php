@@ -3,7 +3,7 @@
     <h2 class="ml-lg-3 ml-lg-0 {{ $class }} rellax poppins" data-rellax-speed="1">{{$title}}</h2>
 </div>
 <div class="row">
-    <div class="col-lg-10 col-sm-9 col-12">
+    <div class="col-lg-10 col-md-10 col-12">
         <div class="members rellax" data-rellax-speed="1.5">
             <div class="row">
                 @foreach($members as $key => $member)
@@ -24,7 +24,7 @@
         </div>
     </div>
 
-    <div class="col-lg-2 col-sm-3 col-2 mt-3 d-none d-sm-block @if(isset($sticky) && $sticky) sticky @endif">
+    <div class="col-lg-2 col-md-2 col-2 mt-3 d-none d-md-block @if(isset($sticky) && $sticky) sticky @endif">
         {{ $slot }}
     </div>
 </div>
