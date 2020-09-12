@@ -250,6 +250,7 @@
 
 
 #team_members[data-lang="en"]{
+
     .member-list .member .data h3{
 
         word-spacing: 350px;
@@ -257,7 +258,7 @@
     }
 
     @include media-breakpoint-down(md){
-        #team_members .member-list .member .data h3 {
+        .member-list .member .data h3 {
             font-size: 20px;
             margin-top: -20px;
         }
