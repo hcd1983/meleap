@@ -7,7 +7,7 @@
 
     <div class="container-fluid mt-5">
         <div class="row align-items-center">
-            <div class="col-12 col-md-6 col-xl-4 order-1 order-md-0 mt-5 mt-md-0 p-0 p-md-3">
+            <div class="col-12 col-md-6 col-xl-7 col-xxl-5 order-1 order-md-0 mt-5 mt-md-0 p-0 p-md-3">
                 <div class="company-data">
                     <h2 class="poppins">COMPANY PROFILE</h2>
                     <table>
@@ -31,7 +31,7 @@
                 </div>
 
             </div>
-            <div class="col-12 col-md-6 col-xl-4 offset-xl-4 d-flex justify-content-center col-12 order-0 order-md-1">
+            <div class="col-12 col-md-6  col-xl-4 col-xxl-4 offset-xl-1  offset-xxl-3 d-flex justify-content-center col-12 order-0 order-md-1">
                 <a class="hollow-btn poppins font-italic" href="{{ URL::asset('/contact/') }}">Google Map</a>
             </div>
         </div>
