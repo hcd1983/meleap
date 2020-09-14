@@ -131,7 +131,7 @@ $learn_more_text = mb_str_split($learn_more);
             <h1 class="hollow-title d-lg-none px-3">
                 WHAT WE DO
             </h1>
-            <div class="container-fluid position-relative">
+            <div class="container-fluid position-relative wwd">
 
                 <div class="row">
                     <div class="align-items-lg-center d-none d-lg-block col-lg-1 d-lg-flex order-2">
@@ -144,8 +144,8 @@ $learn_more_text = mb_str_split($learn_more);
                         </h3>
                     </div>
 
-                    <div class="col-11 col-lg-11">
-                        <div class="wwd-posts">
+                    <div class="col-12 col-lg-11">
+                        <div class="wwd-posts" style="background-image: url('{{ URL::asset('images/wwd-1.png') }}');">
                             <div class="row pb-0 pb-lg-5">
                                 <div class="col-lg-4 rellax" data-rellax-speed="3">
                                     <div style="height: 40px" class="d-none d-lg-block"></div>
@@ -154,24 +154,20 @@ $learn_more_text = mb_str_split($learn_more);
                                             <p>{!! nl2br(__("index.what_we_do.intro")) !!}</p>
                                         </div>
                                     @endif
-                                    <div class="wwd-block mb-5 mb-lg-0 in-view-fadein-to-top in-view in-view-once increase no-effect" data-delay=".25">
+                                    <div class="wwd-block mb-5 mb-lg-0 in-view-fadein-to-top in-view in-view-once increase no-effect intro" data-delay=".25">
                                         <div class="effect">
                                             <div class="effect-container">
-                                                <div class="block-image" style="background-image: url('{{ URL::asset('images/wwd-1.png') }}');">
-                                                </div>
                                             </div>
-                                            <h4 class="wwd-title">
+                                            <h4 class="wwd-title intro">
                                                 <span>INTRO <br>OF AR<br>TECHNOLOGY</span>
                                             </h4>
                                             @if($locale== "jp")
-                                                <div class="wwd-description">
-                                                    <vword paragraph="{!! nl2br(__("index.what_we_do.intro")) !!}" class="position-relative"></vword>
+                                                <div class="wwd-description intro">
+                                                    <p class="wwd-intro-text">"{!! nl2br(__("index.what_we_do.intro")) !!}" </p>
                                                 </div>
                                             @endif
                                         </div>
-                                        <div class="readmore">
-                                            <span>{{ $learn_more }} →</span>
-                                        </div>
+ 
                                     </div>
                                 </div>
                                 <div class="col-lg-4 rellax" data-rellax-speed="2">
@@ -330,8 +326,11 @@ $learn_more_text = mb_str_split($learn_more);
         <div id="news-grid" >
             <div class="row m-0">
                 <div class="col-12 p-0">
+            <h1 class="hollow-title d-lg-none px-3">
+                NEWS
+            </h1>
 
-                        <div class="main-news" style="background-image: url({{ $last_post["cover"] }})">
+                        <div class="main-news">
                             <div class="overlay"></div>
                             <div class="news-info">
                                 <div class="clearfix">
@@ -339,6 +338,7 @@ $learn_more_text = mb_str_split($learn_more);
                                     <div class="float-right">NEWS</div>
                                 </div>
                             </div>
+													<img src="{{ $last_post["cover"] }}" class="news-img" />
                             <a href="{{route("news_api",["locale"=>$locale])}}" >
                                 <h3 class="poppins @if(mb_strlen($last_post["title"]) > 70) smaller-title @endif">
                                     {!! $last_post["title"] !!}
