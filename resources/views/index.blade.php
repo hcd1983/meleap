@@ -149,11 +149,6 @@ $learn_more_text = mb_str_split($learn_more);
                             <div class="row pb-0 pb-lg-5">
                                 <div class="col-lg-4 rellax" data-rellax-speed="3">
                                     <div style="height: 40px" class="d-none d-lg-block"></div>
-                                    @if($locale== "en")
-                                        <div class="description-en poppins in-view-fadein-to-top in-view in-view-once">
-                                            <p>{!! nl2br(__("index.what_we_do.intro")) !!}</p>
-                                        </div>
-                                    @endif
                                     <div class="wwd-block mb-5 mb-lg-0 in-view-fadein-to-top in-view in-view-once increase no-effect intro" data-delay=".25">
                                         <div class="effect">
                                             <div class="effect-container">
@@ -166,6 +161,11 @@ $learn_more_text = mb_str_split($learn_more);
                                                     <p class="wwd-intro-text">"{!! nl2br(__("index.what_we_do.intro")) !!}" </p>
                                                 </div>
                                             @endif
+																					@if($locale== "en")
+																					<div class="wwd-description intro">
+                                            <p class="wwd-intro-text">{!! nl2br(__("index.what_we_do.intro")) !!}</p>
+																						</div>
+                                    @endif
                                         </div>
  
                                     </div>

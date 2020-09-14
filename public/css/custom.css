@@ -1,5 +1,7 @@
 #what-we-do-and-other .wwd-posts{
-	background-size: cover;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-color: #2476bc;
 }
 #what-we-do-and-other .wwd-intro-text{
 	margin-top: 90%;
@@ -9,6 +11,11 @@
 .news-img{
 	width: 100%;
 	margin-top: 20px;
+}
+@media (min-width: 1199.98px){
+#news-grid .main-news h3{
+	font-size: 54px;
+}
 }
 @media (min-width: 1600px){
 	.offset-xxl-3 {
@@ -53,7 +60,6 @@
 	}
 	#what-we-do-and-other .wwd-posts{
 		background-size: auto;
-		background-repeat: no-repeat;
-		background-color: #53C2E5;
+		background-color: #2781C4;
 	}
 }
