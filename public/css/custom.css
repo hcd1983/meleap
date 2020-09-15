@@ -24,12 +24,16 @@
 }
 @media (max-width: 991.98px){
 	#what-we-do-and-other .wwd-posts{
+		background-size: auto;
+	}
+	#what-we-do-and-other .wwd-posts{
 	padding: 30px 0;
 		margin-bottom: 50px;
 }
 	#what-we-do-and-other .wwd-posts .wwd-block h4.intro{
 		margin-top: 0;
 		position: static;
+		text-align: right;
 	}
 	#what-we-do-and-other .wwd-intro-text{
 		margin-top: 0;
@@ -48,7 +52,7 @@
 		margin: 30px 0 0;
 	}
 	.news-img{
-		margin: 0 0 20px;
+		margin: 10px 0 20px;
 	}
 	#news-grid .main-news{
 		height: auto;
@@ -58,8 +62,14 @@
 	.wwd-posts .wwd-block{
 		width: 80%;
 	}
+	#what-we-do-and-other .wwd-intro-text{
+		padding: 0 0 10px 10px;
+		width: 70%;
+		margin: 0 -12px 0 auto;
+		text-align: right;
+	}
 	#what-we-do-and-other .wwd-posts{
-		background-size: auto;
+		background-size: contain;
 		background-color: #2781C4;
 	}
 }
