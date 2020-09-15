@@ -1,0 +1,65 @@
+#what-we-do-and-other .wwd-posts{
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-color: #2476bc;
+}
+#what-we-do-and-other .wwd-intro-text{
+	margin-top: 90%;
+	padding: 0 10px;
+	color: #333;
+}
+.news-img{
+	width: 100%;
+	margin-top: 20px;
+}
+@media (min-width: 1199.98px){
+#news-grid .main-news h3{
+	font-size: 54px;
+}
+}
+@media (min-width: 1600px){
+	.offset-xxl-3 {
+    margin-left: 20%;
+	}
+}
+@media (max-width: 991.98px){
+	#what-we-do-and-other .wwd-posts{
+	padding: 30px 0;
+		margin-bottom: 50px;
+}
+	#what-we-do-and-other .wwd-posts .wwd-block h4.intro{
+		margin-top: 0;
+		position: static;
+	}
+	#what-we-do-and-other .wwd-intro-text{
+		margin-top: 0;
+		}
+	.wwd-posts .wwd-block .wwd-description.intro{
+		position: static;
+	}
+	.wwd-posts .wwd-block.intro{
+		background: none;
+	}
+	.container-fluid.wwd{
+		padding:  0;
+	}
+	#news-grid .hollow-title{
+		font-size: 2.5rem;
+		margin: 30px 0 0;
+	}
+	.news-img{
+		margin: 0 0 20px;
+	}
+	#news-grid .main-news{
+		height: auto;
+	}
+}
+@media (max-width: 480px){
+	.wwd-posts .wwd-block{
+		width: 80%;
+	}
+	#what-we-do-and-other .wwd-posts{
+		background-size: auto;
+		background-color: #2781C4;
+	}
+}
