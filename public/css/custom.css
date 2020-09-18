@@ -12,6 +12,9 @@
 	width: 100%;
 	margin-top: 20px;
 }
+#team_members .member-list .member{
+	width: 100%;
+}
 @media (min-width: 1199.98px){
 #news-grid .main-news h3{
 	font-size: 54px;
@@ -56,6 +59,9 @@
 	}
 	#news-grid .main-news{
 		height: auto;
+	}
+	#header.not-on-top{
+		background: rgba(0,0,0,0.5);
 	}
 }
 @media (max-width: 480px){

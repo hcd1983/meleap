@@ -222,9 +222,7 @@ if(isset($page_setting["acf"])){
     let lastScrollTop = 0;
     $(window).scroll(function(){
 
-        if(use_mobile_style() == true){
-            return;
-        }
+        
 
         if($(window).scrollTop() > 60){
             $("#header").addClass("not-on-top");
