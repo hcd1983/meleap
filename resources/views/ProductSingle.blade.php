@@ -1,5 +1,5 @@
 @extends("page",[
-    'title' => $title.' | MELEAP',
+    'title' => $title.' | meleap',
     'current'=> 'product'
 ])
 @php

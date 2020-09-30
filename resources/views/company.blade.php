@@ -1,5 +1,5 @@
 @extends("page",[
-    'title' => 'About | MELEAP',
+    'title' => 'About | meleap',
     'current'=> 'about'
 ])
 

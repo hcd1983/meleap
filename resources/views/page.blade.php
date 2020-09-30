@@ -12,7 +12,7 @@ $nav["about"] = ["text"=>"about","url"=> route('about', ["locale"=> $locale] )];
 $nav["product"] = ["text"=>"product","url"=> "javascript:void(0)"];
 //$nav["news"] = ["text"=>"news","url"=> route('news', ["locale"=> $locale] )];
 $nav["news_api"] = ["text"=>"news","url"=> route('news_api', ["locale"=> $locale] )];
-//$nav["joinus"] = ["text"=>"join us","url"=>"#"];
+$nav["joinus"] = ["text"=>"joinus","url"=>"https://hrmos.co/pages/meleap/jobs"];
 $nav["contact"] = ["text"=>"contact","url"=> route('contact', ["locale"=> $locale] )];
 
 $homeurl = route('home', ["locale"=> $locale]);
@@ -52,7 +52,7 @@ if(isset($page_setting["acf"])){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <meta name="description" content="{{$title}}">
-    <meta name="keywords" content="HADO, HadoBall, Meleap, AR">
+    <meta name="keywords" content="meleap, メリープ, HADO, ハドー, HMD, テクノスポーツ, AR, VR, 拡張現実, ヘッドマウントディスプレイ, ウェアラブル, ゲーム, virtual reality, augmented reality, 仮想現実, かめはめ波, 波動, はどう, はど, ミーリープ, eスポーツ, esports, Xball">
     <meta name="author" content="Mounts Studio">
 
     <meta property="og:title" content="{{$social_title ?? $social_title_default}}">
@@ -73,7 +73,7 @@ if(isset($page_setting["acf"])){
     <link rel=icon href="{{$favico}}" sizes="any" type="image/svg+xml">
 
     <title>{{$title}}</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="preload">
     <link type="text/css" href="{{URL::asset('css/app.css?ver='.time())}}" rel="stylesheet">
     <link type="text/css" href="{{URL::asset('css/custom.css?ver='.time())}}" rel="stylesheet">
 
@@ -230,16 +230,7 @@ if(isset($page_setting["acf"])){
             $("#header").removeClass("not-on-top");
         }
 
-        var st = $(this).scrollTop();
-        if (st > lastScrollTop){
-            // downscroll code
-            $("#header").addClass("scroll-hide");
-        } else {
-            // upscroll code
-            $("#header").removeClass("scroll-hide");
-        }
-
-        lastScrollTop = st;
+       
 
         barGoactive();
     })
