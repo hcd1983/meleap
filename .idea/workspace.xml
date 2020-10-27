@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6cd07553-4af4-41b2-a20b-a107b20f5c50" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/meleap.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/meleap.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +213,8 @@
       <workItem from="1599100223202" duration="19013000" />
       <workItem from="1599458199010" duration="3705000" />
       <workItem from="1599811251161" duration="3287000" />
-      <workItem from="1599880776821" duration="2061000" />
+      <workItem from="1599880776821" duration="2153000" />
+      <workItem from="1603736457154" duration="1584000" />
     </task>
     <servers />
   </component>
@@ -231,23 +234,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="45" y="98" width="1720" height="839" key="DirDiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1596786503918" />
-    <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1599809091457">
+    <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1600156591245">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1599809091457" />
+    <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1600156591245" />
     <state x="777" y="443" key="NewPhpFileDialog" timestamp="1598501102167">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="777" y="443" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593656942586" />
     <state x="777" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598501102167" />
-    <state x="461" y="162" key="SettingsEditor" timestamp="1598932303124">
+    <state x="461" y="162" key="SettingsEditor" timestamp="1603737030288">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1598932303124" />
-    <state width="544" height="446" key="SwitcherDM" timestamp="1594888597106">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="544" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1594888597106" />
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1603737030288" />
     <state x="647" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1597819717113">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -271,7 +269,6 @@
     <state x="623" y="229" width="672" height="678" key="search.everywhere.popup" timestamp="1599190440241">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="229" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593604850221" />
     <state x="623" y="229" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599190440241" />
   </component>
 </project>

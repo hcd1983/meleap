@@ -256,24 +256,21 @@ class meleap extends Controller
 
     function GetProducts(){
 
-        $value = Cache::rememberForever('products', function() {
+        $endpoint = $this -> ProductsApi;
+        $client = new \GuzzleHttp\Client();
+        $response = $client->request('GET', $endpoint, [
+            'query' => [
+                'per_page' => 99,
+                'order' => 'asc',
+            ],
+            'verify'=>false
+        ]);
+        $statusCode = $response->getStatusCode();
+        $content = $response->getBody();
+        $products = json_decode( $content->getContents() ,true);
+        return $products;
 
-            $endpoint = $this -> ProductsApi;
-            $client = new \GuzzleHttp\Client();
-            $response = $client->request('GET', $endpoint, [
-                'query' => [
-                    'per_page' => 99,
-                    'order' => 'asc',
-                ],
-                'verify'=>false
-            ]);
-            $statusCode = $response->getStatusCode();
-            $content = $response->getBody();
-            $products = json_decode( $content->getContents() ,true);
-            return $products;
-
-        });
-        return $value;
+//        return $value;
 
     }
 
@@ -464,20 +461,17 @@ class meleap extends Controller
     }
 
     function GetPageSettings(){
-        $value = Cache::rememberForever('settings', function() {
 
-            $endpoint = $this -> SettingsApi;
-            $client = new \GuzzleHttp\Client();
-            $response = $client->request('GET', $endpoint, [
-                'verify'=>false
-            ]);
-            $statusCode = $response->getStatusCode();
-            $content = $response->getBody();
-            $IndexData = json_decode( $content->getContents() ,true);
-            return $IndexData;
-        });
+        $endpoint = $this -> SettingsApi;
+        $client = new \GuzzleHttp\Client();
+        $response = $client->request('GET', $endpoint, [
+            'verify'=>false
+        ]);
+        $statusCode = $response->getStatusCode();
+        $content = $response->getBody();
+        $IndexData = json_decode( $content->getContents() ,true);
+        return $IndexData;
 
-        return $value;
     }
 
     function PageSettings(){
@@ -498,35 +492,15 @@ class meleap extends Controller
 
     function GetIndexData(){
 
-//        $seconds = 600;
-//        $value = Cache::remember('IndexData', $seconds, function() {
-//
-//            $endpoint = $this -> IndexPageApi;
-//            $client = new \GuzzleHttp\Client();
-//            $response = $client->request('GET', $endpoint, [
-//                'verify'=>false
-//            ]);
-//            $statusCode = $response->getStatusCode();
-//            $content = $response->getBody();
-//            $IndexData = json_decode( $content->getContents() ,true);
-//            return $IndexData;
-//
-//        });
-
-        $value = Cache::rememberForever('index', function() {
-
-            $endpoint = $this -> IndexPageApi;
-            $client = new \GuzzleHttp\Client();
-            $response = $client->request('GET', $endpoint, [
-                'verify'=>false
-            ]);
-            $statusCode = $response->getStatusCode();
-            $content = $response->getBody();
-            $IndexData = json_decode( $content->getContents() ,true);
-            return $IndexData;
-
-        });
-        return $value;
+        $endpoint = $this -> IndexPageApi;
+        $client = new \GuzzleHttp\Client();
+        $response = $client->request('GET', $endpoint, [
+            'verify'=>false
+        ]);
+        $statusCode = $response->getStatusCode();
+        $content = $response->getBody();
+        $IndexData = json_decode( $content->getContents() ,true);
+        return $IndexData;
 
     }
 
@@ -603,31 +577,22 @@ class meleap extends Controller
     }
 
     function GetMembers(){
+        $endpoint = $this->MembersApi;
+        $client = new \GuzzleHttp\Client();
 
+        $response = $client->request('GET', $endpoint, [
+            'query' => [
+                'per_page' => 99,
+                'order' => 'asc',
+            ],
+            'verify'=>false
+        ]);
 
-        $value = Cache::rememberForever('members', function() {
+        $statusCode = $response->getStatusCode();
+        $content = $response->getBody();
+        $members = json_decode( $content ->getContents() ,true);
 
-//            $endpoint = "https://apimeleap.it-monk.com/wp-json/wp/v2/team_member";
-            $endpoint = $this->MembersApi;
-            $client = new \GuzzleHttp\Client();
-
-            $response = $client->request('GET', $endpoint, [
-                'query' => [
-                    'per_page' => 99,
-                    'order' => 'asc',
-                ],
-                'verify'=>false
-            ]);
-
-            $statusCode = $response->getStatusCode();
-            $content = $response->getBody();
-            $members = json_decode( $content ->getContents() ,true);
-
-            return $members;
-        });
-
-
-        return $value;
+        return $members;
 
     }
 
